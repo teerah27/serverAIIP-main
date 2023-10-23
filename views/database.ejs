@@ -6,53 +6,6 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Database</title>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sidenav = document.getElementById("sidenav");
-            const sidenavToggle = document.getElementById("sidenav-toggle");
-
-            sidenavToggle.addEventListener("click", function () {
-                sidenav.classList.toggle("expanded");
-            });
-
-            sidenav.addEventListener("mouseenter", function () {
-                sidenav.classList.add("expanded");
-            });
-
-            sidenav.addEventListener("mouseleave", function () {
-                sidenav.classList.remove("expanded");
-            });
-        });
- 
-        function showRows(database) {
-            var rows = document.querySelectorAll("#database tr");
-            var count = 1; 
-    
-            for (var i = 0; i < rows.length; i++) {
-                var row = rows[i];
-    
-                if (row.id === "header") {
-                    row.style.display = "table-row";
-                    continue; 
-                }
-    
-                row.style.display = "none"; 
-    
-                if (row.getAttribute("database") === database || database === "All") {
-                    row.style.display = "table-row";
-    
-                    if (row.getAttribute("database") === database) {
-                        row.cells[0].textContent = count;
-                        count++;
-                    } else if (database === "All") {
-                        row.cells[0].textContent = count;
-                        count++;
-                    }
-                }
-            }
-        }
-    </script>
 
 </head>
 <body>
@@ -109,18 +62,7 @@
         </table>
     </div>
     </body>
-   <script>
-        // Disable the back button
-        history.pushState(null, null, location.href);
-        window.onpopstate = function () {
-            history.go(1);
-        };
-
-        const tableRows = document.querySelectorAll('tbody tr');
-
-        tableRows.forEach((row, index) => {
-            const noColumn = row.querySelector('td:first-child');
-            noColumn.textContent = index + 1;
-        });
-    </script>
+   <script src="script/sidenav.js"></script>
+   <script src="script/backbt.js.js"></script>
+   <script src="script/databasefx.js.js.js"></script>
 </html>
