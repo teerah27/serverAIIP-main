@@ -1,0 +1,126 @@
+<!DOCTYPE ejs>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Database</title>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidenav = document.getElementById("sidenav");
+            const sidenavToggle = document.getElementById("sidenav-toggle");
+
+            sidenavToggle.addEventListener("click", function () {
+                sidenav.classList.toggle("expanded");
+            });
+
+            sidenav.addEventListener("mouseenter", function () {
+                sidenav.classList.add("expanded");
+            });
+
+            sidenav.addEventListener("mouseleave", function () {
+                sidenav.classList.remove("expanded");
+            });
+        });
+ 
+        function showRows(database) {
+            var rows = document.querySelectorAll("#database tr");
+            var count = 1; 
+    
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+    
+                if (row.id === "header") {
+                    row.style.display = "table-row";
+                    continue; 
+                }
+    
+                row.style.display = "none"; 
+    
+                if (row.getAttribute("database") === database || database === "All") {
+                    row.style.display = "table-row";
+    
+                    if (row.getAttribute("database") === database) {
+                        row.cells[0].textContent = count;
+                        count++;
+                    } else if (database === "All") {
+                        row.cells[0].textContent = count;
+                        count++;
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="logo.png" alt="Logo" height="100px">
+            <h2>DATABASE</h2>
+        </header>
+
+        <iv class="sidenav" id="sidenav">
+            <a href="#" class="sidenav-toggle" id="sidenav-toggle">
+          
+            </a>
+            <a href="/dashboard">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <span class="sidenav-label">Dashboard</span>
+            </a>
+            <a href="/img_process">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <span class="sidenav-label">Process</span>
+            </a>
+            <a href="/database">
+                <i class="fa fa-database" aria-hidden="true"></i>
+                <span class="sidenav-label">Database</span>
+            </a>
+            </a>
+            <a href="/login/logout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span class="sidenav-label">Logout</span>
+            </a>
+        </div>
+
+    </div>
+    <div class="table-container">
+        <table id="region" class="table" style="width:85%">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Share of Voice</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach((record, index) => { %>
+                    <tr>
+                        <td></td>
+                        <td><%= record.sov %></td>
+                        <td><%= record.date %></td>
+                        <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    </body>
+   <script>
+        // Disable the back button
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        tableRows.forEach((row, index) => {
+            const noColumn = row.querySelector('td:first-child');
+            noColumn.textContent = index + 1;
+        });
+    </script>
+</html>
