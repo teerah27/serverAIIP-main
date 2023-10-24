@@ -40,9 +40,8 @@ function setIframeSize() {
     const iframeWidth = screenWidth - sidenavWidth;
     iframe.style.width = iframeWidth + "px";
 
-    if (sidenav.classList.contains("expanded")) {
-        iframe.style.height = "780px"
-        iframe.style.height = "780px"; // Set the default height when the sidenav is collapsed
+    if (sidenav.classList.contains("expanded"))
+        iframe.style.height = "780px";
     }
-}}
+}
 )

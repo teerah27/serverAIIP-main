@@ -34,7 +34,6 @@ tableRows.forEach((row, index) => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Add a click event listener to all delete buttons
     const deleteButtons = document.querySelectorAll(".delete-record");
     deleteButtons.forEach(function(button) {
         button.addEventListener("click", function(event) {
@@ -44,16 +43,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function updateDatabase() {
-        // Send an HTTP request to the '/update' route in your imgprocessRouter
         fetch('/img_process/update', {
             method: "POST",
         })
         .then(response => {
             if (response.ok) {
-                // Reload the page or update the UI as needed
                 window.location.reload();
             } else {
-                // Handle errors
                 console.error("Error updating the database");
             }
         })
