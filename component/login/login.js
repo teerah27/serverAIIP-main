@@ -10,7 +10,14 @@ loginRouter.get('/', (req, res) => {
 
 loginRouter.post('/', async (req, res) => {
   const { email, password } = req.body;
-  const formattedTimestamp = new Date().toISOString().slice(0, 16).replace("T", " ");
+  const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Kuala_Lumpur',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(new Date());
 
   try {
     const query = 'SELECT * FROM user_details WHERE email = $1';

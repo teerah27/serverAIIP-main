@@ -18,7 +18,14 @@ registrationRouter.post('/form', async (req, res) => {
     res.redirect('/register?error=email-in-use');
   } else {
     const userId = uuidv4();
-    const formattedTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+    const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Kuala_Lumpur',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    }).format(new Date());
 
     try {
       const insertQuery = `
