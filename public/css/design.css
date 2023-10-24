@@ -178,19 +178,28 @@ select                                                  {text-align: justify;
 .form__buttons                                          {text-align: center;
                                                         margin: 0 auto;
                                                         padding: 10px 0 0;  }
-
-                                                        .popup {
-                                                            position: fixed;
-                                                            top: 50px; /* Adjust this value to control the vertical position */
-                                                            margin-left: 1;
-                                                            text-align: center;
-                                                            display: none;
-                                                            background: #0056b3;;
-                                                            color: white;
-                                                            padding: 1px;
-                                                            
-                                                        }
-                                                    
-                                                        .popup p {
-                                                            padding: 10px;
-                                                        }
+.popup                                                  {position: fixed;
+                                                        top: 50px; /* Adjust this value to control the vertical position */
+                                                        margin-left: 1;
+                                                        text-align: center;
+                                                        display: none;
+                                                        background: #0056b3;;
+                                                        color: white;
+                                                        padding: 1px;}
+.popup p                                                {padding: 10px;}
+.password-toggle {
+    position: relative;
+}
+#password-toggle {
+    color: #67696b;
+    position: fixed;
+    right: 10px;
+    top: 51.5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    margin-right: 680px;
+    z-index: 2;
+}
+#eye-icon {
+    font-size: 16px; /* Adjust the size as needed */
+}

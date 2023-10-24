@@ -21,7 +21,11 @@
         <div class="reg-container">    
             <input type="text" class="form-control" id="email" name="email" placeholder="Email" required><br> 
              
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required><br><br>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            <span class="password-toggle" id="password-toggle" onclick="togglePasswordVisibility()">
+                <i class="fa fa-eye" id="eye-icon"></i>
+            </span>            
+            <br>
          
             <button type="submit" class="css-button">
                 <span class="css-button-text">
@@ -43,5 +47,6 @@
     
     <script src="script/loginpop.js"></script> 
     <script src="script/backbt.js"></script>   
+    <script src="script/pwshide.js"></script>
 </body>
 </html>

@@ -11,12 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const iframeWidth = screenWidth - sidenavWidth;
         iframe.style.width = iframeWidth + "px";
     }
-
-    sidenavToggle.addEventListener("click", function () {
-        sidenav.classList.toggle("expanded");
-        content.classList.toggle("expanded");
-        setIframeSize(); // Set the iframe size when the sidenav is toggled
-    });
     
     sidenav.addEventListener("mouseenter", function () {
         sidenav.classList.add("expanded");
