@@ -54,5 +54,4 @@ registrationRouter.post('/form', async (req, res) => {
   }
 });
 
-
 module.exports = registrationRouter;

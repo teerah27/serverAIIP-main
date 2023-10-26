@@ -1,67 +1,54 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="design.css">
-        <link rel="icon" type="image/png" href="logo.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Register</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Register</title>
 
-        <style>
-            body {background-image: url("background_2.png")}
-        </style>
+    <style>
+        body {background-image: url("background_2.png")}
+    </style>
 
-    </head>
-    <body> 
-    <img src="logo.png" height="105px"><br/><br><br><br><br>
-    <h1>REGISTER</h1><br><br>
+</head>
+<body> 
+  <img src="logo.png" height="105px"><br/><br><br><br><br><br>
+  <h1>REGISTER</h1><br><br>
 
-    <form action="/register/form" method="post" id="registration-form">  
-            <div class="reg-container">    
-                <input type="text" class="reg-control" id="first_name" name="first_name" placeholder="First Name" required>      
-                <input type="text" class="reg-control" id="last_name" name="last_name" placeholder="Last Name" required>
-                <input type="text" class="reg-control" id="age" name="age" placeholder="Age" required>      
-                <input type="text" class="reg-control" id="address" name="address" placeholder="Address" required>
-                <input type="text" class="reg-control" id="email" name="email" placeholder="Email" required>
-                <div class="password-container" id="password-container">
-                    <input type="password" class="reg-control" id="password" name="password" placeholder="Password" required>
-                    <i class="fa fa-info-circle info-icon" id="info-icon"></i>
-                </div>
-                <input type="password" class="reg-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
-                <!-- Add a div to display the password guidelines -->
-                <div class="password-guidelines" id="password-guidelines">
-                    Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.
-                </div>
-                
-                <br><br><br>
+  <form action="/register/form" method="post">  
+        <div class="reg-container">    
+            <input type="text" class="reg-control" id="first_name" name="first_name" placeholder="First Name" required>      
+            <input type="text" class="reg-control" id="last_name" name="last_name" placeholder="Last Name" required>
+            <input type="text" class="reg-control" id="age" name="age" placeholder="Age" required>      
+            <input type="text" class="reg-control" id="address" name="address" placeholder="Address" required>
+            <input type="text" class="reg-control" id="email" name="email" placeholder="Email" required>      
+            <input type="password" class="reg-control" id="password" name="password" placeholder="Password" required>
+            <input type="password" class="reg-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required><br><br><br>
 
-            <button type="submit" class="css-button"> 
-                <span class="css-button-text">
-                    <span>REGISTER<span>
-                </span>
-            </button>
+        <button type="submit" class="css-button"> 
+            <span class="css-button-text">
+                <span>REGISTER<span>
+            </span>
+        </button>
 
-            <p class="log">Already have an account? Login <a href="/">here</a></p>
+        <p class="log">Already have an account? Login <a href="/">here</a></p>
 
-            </div>
-
-        </form>
-
-        <div id="weakerror-popup" class="popup" style="display: none;">
-            <p>Please use stronger password</p>
         </div>
-        <div id="error-popup" class="popup" style="display: none;">
-            <p>Email already in use</p>
-        </div>
-        <div id="pswerror-popup" class="popup" style="display: none;">
-            <p>Passwords do not match. Please try again.</p>
-        </div>    
-        <div id="success-popup" class="popup" style="display: none;">
-            <p>Registration successful!<br><br>Please go back to login page</p>
-        </div>
-        <script src="script/registerpop.js"></script>
-        <script src="script/backbt.js"></script>
-        <script src="script/pswguid.js"></script>
 
-    </body>
-    </html>
+    </form>
+
+    <div id="error-popup" class="popup" style="display: none;">
+        <p>Email already in use</p>
+    </div>
+    <div id="pswerror-popup" class="popup" style="display: none;">
+        <p>Passwords do not match. Please try again.</p>
+    </div>    
+    <div id="success-popup" class="popup" style="display: none;">
+        <p>Registration successful!<br>Please go back to login page</p>
+    </div>
+    <script src="script/registerpop.js"></script>
+    <script src="script/backbt.js"></script>
+
+</body>
+</html>

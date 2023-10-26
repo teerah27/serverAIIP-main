@@ -3,7 +3,7 @@ function showErrorPopup() {
   errorPopup.style.display = 'block';
 
   setTimeout(function() {
-    errorPopup.style.display = 'none';
+      errorPopup.style.display = 'none';
   }, 3000);
 }
 
@@ -12,36 +12,25 @@ function showPasswordErrorPopup() {
   passwordErrorPopup.style.display = 'block';
 
   setTimeout(function() {
-    passwordErrorPopup.style.display = 'none';
+      passwordErrorPopup.style.display = 'none';
   }, 3000);
 }
 
-function showPasswordWeakErrorPopup() {
-  const passwordWeakErrorPopup = document.getElementById('weakerror-popup');
-  passwordWeakErrorPopup.style.display = 'block';
+function showSuccessPopup() {
+  const successPopup = document.getElementById('success-popup');
+  successPopup.style.display = 'block';
 
   setTimeout(function() {
-    passwordWeakErrorPopup.style.display = 'none';
+    successPopup.style.display = 'none';
   }, 3000);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const registrationForm = document.getElementById('registration-form');
+const urlParams = new URLSearchParams(window.location.search);
 
-  registrationForm.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
-    setTimeout(function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('success') && urlParams.get('success') === 'true') {
-        showPopup();
-      } else if (urlParams.has('error') && urlParams.get('error') === 'email-in-use') {
-        showErrorPopup();
-      } else if (urlParams.has('error') && urlParams.get('error') === 'password-mismatch') {
-        showPasswordErrorPopup();
-      } else if (urlParams.has('error') && urlParams.get('error') === 'weak-password') {
-        showPasswordWeakErrorPopup();
-      }
-    }, 1000);
-  });
-});
+if (urlParams.has('success') && urlParams.get('success') === 'true') {
+  showSuccessPopup();
+} else if (urlParams.has('error') && urlParams.get('error') === 'email-in-use') {
+  showErrorPopup();
+} else if (urlParams.has('error') && urlParams.get('error') === 'password-mismatch') {
+  showPasswordErrorPopup();
+}
