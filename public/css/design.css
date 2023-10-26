@@ -1,10 +1,7 @@
-/* Reset default styles */
 @charset "ISO-8859-1";
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@500&display=swap');
 
-/* Global styles */
 *, *::after                                             {box-sizing: border-box;}
 body                                                    {font: 'Muli', sans-serif;
                                                         background-size: cover;
@@ -44,7 +41,7 @@ button                                                  {background-color: #0056
                                                         position: relative;}
 button:hover                                            {background-color: #0056b3;}
 .sidenav                                                {height: 100%;
-                                                        width: 80px; /* Collapsed width */
+                                                        width: 80px; 
                                                         position: fixed;
                                                         top: 0;
                                                         left: 0;
@@ -53,7 +50,7 @@ button:hover                                            {background-color: #0056
                                                         z-index: 1;
                                                         transition: width 0.3s;
                                                         overflow-y: auto;}
-.sidenav.expanded                                       {width: 210px;} /* Expanded width */
+.sidenav.expanded                                       {width: 210px;} 
 .sidenav a                                              {padding: 16px;
                                                         color: white;
                                                         text-decoration: none;
@@ -61,18 +58,18 @@ button:hover                                            {background-color: #0056
                                                         display: flex;
                                                         align-items: center;
                                                         transition: background-color 0.3s, color 0.3s;}
-.sidenav a i                                            {font-size: 30px; /* Adjust the icon size as needed */
+.sidenav a i                                            {font-size: 30px; 
                                                         margin-right: 10px;}
 .sidenav-label                                          {display: none;}
 .sidenav.expanded .sidenav-label                        {display: inline-block;
-                                                        padding-left: 10px; }/* Space between icon and label */
+                                                        padding-left: 10px;}
 .content                                                {flex: 1;
                                                         width: fit-content;
-                                                        margin-left: 60px; /* Width of the collapsed side nav */
+                                                        margin-left: 60px;
                                                         transition: margin-left 0.3s;
                                                         height: 800px;
                                                         padding: 15px;}
-.sidenav.expanded + .content                            {margin-left: 200px;} /* Width of the expanded side nav */
+.sidenav.expanded + .content                            {margin-left: 200px;}
 .header                                                 {position: fixed;
                                                         width: 100%;
                                                         height: 15%;
@@ -179,7 +176,7 @@ select                                                  {text-align: justify;
                                                         margin: 0 auto;
                                                         padding: 10px 0 0;  }
 .popup                                                  {position: fixed;
-                                                        top: 50px; /* Adjust this value to control the vertical position */
+                                                        top: 50px; 
                                                         margin-left: 1;
                                                         text-align: center;
                                                         display: none;
@@ -187,17 +184,7 @@ select                                                  {text-align: justify;
                                                         color: white;
                                                         padding: 1px;}
 .popup p                                                {padding: 10px;}
-.password-toggle                                        {position: relative;}
-#password-toggle                                        {color: #67696b;
-                                                        position: fixed;
-                                                        right: -60px;
-                                                        top: 49.8%;
-                                                        transform: translateY(50%);
-                                                        cursor: pointer;
-                                                        /* margin-bottom: 100Px; */
-                                                        margin-right: 750px;
-                                                        z-index: 2;}
-#eye-icon                                               {font-size: 16px;} /* Adjust the size as needed */
+#eye-icon                                               {font-size: 16px;} 
 .logoutpopup {                                          display: none;
                                                         position: fixed;
                                                         top: 50%;
@@ -217,56 +204,26 @@ select                                                  {text-align: justify;
 .password-guidelines                                    {display: none;
                                                         font-size: 14px;
                                                         color: gray;
-                                                        margin-top: 5px;} /* Adjust the margin as needed */
-                                                        /* Define the initial state of the button */
-/* .transition-button {
-    background-color: #000000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Add a transition to the background-color property 
-}
-
-/* Define the style when hovering over the button */
-/* .transition-button:hover {
-    background-color: #2980b9;
-} */
- 
-.form-control {
-    width: 100%; /* Set the width to 100% for both email and password input fields */
-    line-height: 2.5;
-    border: none;
-    border-bottom: 2px solid #67696b;
-    background-color: transparent;
-    position: relative;
-    z-index: 1;
-    margin: 0;
-  }
-  
-  .password-input-container {
-    position: relative;
-    width: 30%; /* Set the width to 100% for the container */
-  }
-  .email-input-container {
-    position: relative;
-    width: 30%; /* Set the width to 100% for the container */
-  }
-  
-  .password-toggle {
-    position: absolute;
-    right: 0; /* Adjust the value to control the horizontal position */
-    top: 50%; /* Vertically center the icon */
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-  /* Add a class to style the password visibility icon */
-  .eye-icon {
-    font-size: 18px; /* Adjust the size as needed */
-    color: #67696b; /* Color for the icon */
-    margin: 0;
-}
-
-
+                                                        margin-top: 5px;} 
+.form-control                                           {width: 100%; 
+                                                        line-height: 2.5;
+                                                        border: none;
+                                                        border-bottom: 2px solid #67696b;
+                                                        background-color: transparent;
+                                                        position: relative;
+                                                        z-index: 1;
+                                                        margin: 0; }
+.password-input-container                               {position: relative;
+                                                        width: 30%;}
+.email-input-container                                  {position: relative;
+                                                        width: 30%;}
+.password-toggle                                        {position: absolute;
+                                                        right: 0; 
+                                                        top: 50%; 
+                                                        transform: translateY(-50%);
+                                                        cursor: pointer;
+                                                        z-index: 2;}
+.eye-icon                                               {font-size: 18px; 
+                                                        color: #67696b; 
+                                                        margin: 0;}
+#confirmLogout, #cancelLogout                           {font-size: 17px;}                                                        
