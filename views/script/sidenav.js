@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (sidenav.classList.contains("expanded")) {
             iframe.style.height = "780px";
-            iframe.style.width = "1660px";
+            iframe.style.width = "100%";
         } else {
             iframe.style.height = "780px"; // Adjust the size as needed
-            iframe.style.width =  "1800px";
+            iframe.style.width =  "100%";
         }
 
 }

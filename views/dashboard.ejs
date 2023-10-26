@@ -16,7 +16,6 @@
             <h2>DASHBOARD</h2>
         </header>
         <div class="sidenav" id="sidenav">
-            <a href="#" class="sidenav-toggle" id="sidenav-toggle"></a>
             <a href="/dashboard">
                 <i class="fa fa-bar-chart" aria-hidden="true"></i>
                 <span class="sidenav-label">Dashboard</span>
@@ -37,15 +36,21 @@
         <div class="content" id="content">
             <form action="/login/dashboard" method="get">
                 <div class="dashboard">
-                    <iframe id="dashboard-iframe" src="http://47.250.10.195:3000/d/c1406c27-e6cf-4995-9cf5-10ebe0975773/dashboard1?orgId=1&var-brand=pepsi&var-brand=milo&from=1698009614111&to=1698031214111&theme=light&kiosk=tv&transparent=1" width="100%" height="600"></iframe>
+                    <iframe id="dashboard-iframe" src="http://47.250.10.195:3000/d/c1406c27-e6cf-4995-9cf5-10ebe0975773/dashboard1?orgId=1&from=1698176084112&to=1698197684112&theme=light&kiosk=tv&transparent=1"></iframe>
 
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="script/sidenav.js"></script>
-    <script src="script/backbt.js.js"></script>
+    <div id="logoutConfirmation" class="logoutpopup">
+        <p>Are you sure you want to logout?</p>
+        <button id="confirmLogout">Yes</button>
+        <button id="cancelLogout">No</button>
+    </div>
+    <!-- <button class="transition-button">Hover Me</button> -->
 </body>
-
+<script src="script/sidenav.js"></script>
+<script src="script/backbt.js.js"></script>
+<script src="script/logout.js"></script>
 </html>

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -9,9 +10,33 @@ const dashboardRouter = require('./component/dashboard/dashboard');
 const databaseRouter = require('./component/database/database');
 const imgprocessRouter = require('./component/img_process/img_process');
 
+//Imran
+const getVanUserRouter = require('./component/mobile/getVanUser');
+const getOneVanUserRouter = require('./component/mobile/getOneVanUser');
+const getUserDetailsRouter = require('./component/mobile/getUserDetails'); 
+const insertImageRouter = require('./component/mobile/insertImage');
+const registerVanUserRouter = require('./component/mobile/registerVanUser');
+const updateLastLoginRouter = require('./component/mobile/updateLastLogin');
+var corsOptions = {
+    origin: `http://localhost:8081`
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+
 app.use(express.static('public/css'));
 app.use(express.static('public/img'));
 app.use(express.static('views'));
+
+//for Flutter usage
+app.use('/insert', insertImageRouter);
+app.use('/get_user_details', getUserDetailsRouter);
+app.use('/get_van_user', getVanUserRouter);
+app.use('/get_one_van_user', getOneVanUserRouter);
+app.use('/register_mobile', registerVanUserRouter);
+app.use('/update_last_login', updateLastLoginRouter);
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));

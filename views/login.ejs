@@ -18,23 +18,26 @@
     <h3 style="font-weight: normal;">Welcome back! Login to have access to the AMAST Image Processing System.</h3><br><br>
 
     <form action="/login" method="post">  
-        <div class="reg-container">    
+        <div class="reg-container">   
+            <div class="email-input-container">
             <input type="text" class="form-control" id="email" name="email" placeholder="Email" required><br> 
-             
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-            <span class="password-toggle" id="password-toggle" onclick="togglePasswordVisibility()">
-                <i class="fa fa-eye" id="eye-icon"></i>
-            </span>            
+            </div>
+             <br>
+            <div class="password-input-container">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                <span class="password-toggle" id="password-toggle" onclick="togglePasswordVisibility()">
+                    <i class="fa fa-eye-slash" id="eye-icon"></i>
+                </span>
+            </div>
             <br>
-         
             <button type="submit" class="css-button">
                 <span class="css-button-text">
                     <span>LOGIN</span>
                 </span>
             </button>
 
-            <p>Don't have an account? Register <a href="/register">here</a></p> 
-        </div>
+            <p>Don't have an account? Register <a href="/register">here</a></p> 
+        </div>
     </form>
 
     <div id="not-reg-popup" class="popup" style="display: none;">

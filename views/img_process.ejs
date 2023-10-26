@@ -16,9 +16,6 @@
         </header>
 
         <div class="sidenav" id="sidenav">
-            <a href="#" class="sidenav-toggle" id="sidenav-toggle">
-          
-            </a>
             <a href="/dashboard">
                 <i class="fa fa-bar-chart" aria-hidden="true"></i>
                 <span class="sidenav-label">Dashboard</span>
@@ -72,8 +69,14 @@
             </tbody>
         </table>
     </div>
-    <script src="script/sidenav.js"></script>
-    <script src="script/backbt.js.js"></script>
-    <script src="script/imgfx.js.js.js.js"></script>
+    <div id="logoutConfirmation" class="logoutpopup">
+        <p>Are you sure you want to logout?</p>
+        <button id="confirmLogout">Yes</button>
+        <button id="cancelLogout">No</button>
+    </div>
 </body>
+<script src="script/sidenav.js"></script>
+<script src="script/backbt.js.js"></script>
+<script src="script/imgfx.js.js.js.js"></script>
+<script src="script/logout.js"></script>
 </html>

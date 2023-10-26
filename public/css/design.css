@@ -26,7 +26,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4                      {margin-top: 0;
                                                         margin-bottom: 0;}
 p                                                       {font: candara;
                                                         text-align: center;}
-.form-control                                           {width: 30%;
+.form-temp                                           {width: 30%;
                                                         line-height: 2.5;
                                                         border: none;
                                                         border-bottom: 2px solid #67696b;
@@ -125,7 +125,10 @@ button:hover                                            {background-color: #0056
 .reg-container                                          {display: flex;
                                                         flex-direction: column;
                                                         align-items: center;}
-.overlay                                                {position: fixed;
+.password-container                                     {width: 99.85%;
+                                                        align-items: center;
+                                                        margin-left: 69.4%;}
+.overlay                                                {position: fixed;   
                                                         top: 0;
                                                         left: 0;
                                                         width: 100%;
@@ -187,10 +190,83 @@ select                                                  {text-align: justify;
 .password-toggle                                        {position: relative;}
 #password-toggle                                        {color: #67696b;
                                                         position: fixed;
-                                                        right: 10px;
-                                                        top: 51.5%;
-                                                        transform: translateY(-50%);
+                                                        right: -60px;
+                                                        top: 49.8%;
+                                                        transform: translateY(50%);
                                                         cursor: pointer;
-                                                        margin-right: 680px;
+                                                        /* margin-bottom: 100Px; */
+                                                        margin-right: 750px;
                                                         z-index: 2;}
 #eye-icon                                               {font-size: 16px;} /* Adjust the size as needed */
+.logoutpopup {                                          display: none;
+                                                        position: fixed;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        transform: translate(-50%, -50%);
+                                                        background: white;
+                                                        border: 1px solid #ccc;
+                                                        padding: 20px;
+                                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                                                        z-index: 9999;
+                                                        text-align: center;}
+.logoutpopup button                                     {margin: 10px;
+                                                        width: 80px;}
+.info-icon                                              {color: gray;
+                                                        cursor: pointer;
+                                                        margin-left: 5px;}
+.password-guidelines                                    {display: none;
+                                                        font-size: 14px;
+                                                        color: gray;
+                                                        margin-top: 5px;} /* Adjust the margin as needed */
+                                                        /* Define the initial state of the button */
+/* .transition-button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a transition to the background-color property 
+}
+
+/* Define the style when hovering over the button */
+/* .transition-button:hover {
+    background-color: #2980b9;
+} */
+ 
+.form-control {
+    width: 100%; /* Set the width to 100% for both email and password input fields */
+    line-height: 2.5;
+    border: none;
+    border-bottom: 2px solid #67696b;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+  
+  .password-input-container {
+    position: relative;
+    width: 30%; /* Set the width to 100% for the container */
+  }
+  .email-input-container {
+    position: relative;
+    width: 30%; /* Set the width to 100% for the container */
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 0; /* Adjust the value to control the horizontal position */
+    top: 50%; /* Vertically center the icon */
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  /* Add a class to style the password visibility icon */
+  .eye-icon {
+    font-size: 18px; /* Adjust the size as needed */
+    color: #67696b; /* Color for the icon */
+    margin: 0;
+}
+
+

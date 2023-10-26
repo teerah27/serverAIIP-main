@@ -9,14 +9,24 @@ registrationRouter.get('/', (req, res) => {
 });
 
 registrationRouter.post('/form', async (req, res) => {
-  const { first_name, last_name, age, address, email, password } = req.body;
+  const { first_name, last_name, age, address, email, password, passwordConfirm } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
   const checkEmailQuery = 'SELECT email FROM user_details WHERE email = $1';
   const emailExists = await pool.query(checkEmailQuery, [email]);
 
+  // Password strength requirements
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   if (emailExists.rows.length > 0) {
     res.redirect('/register?error=email-in-use');
+  } else if (!password.match(passwordRegex)) {
+    // Password does not meet strength requirements, show an error message
+    res.redirect('/register?error=weak-password');
+  } else if (password !== passwordConfirm) {
+    // Passwords do not match, show an error message
+    res.redirect('/register?error=password-mismatch');
   } else {
+    // Your registration logic for a strong password
     const userId = uuidv4();
     const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
       timeZone: 'Asia/Kuala_Lumpur',
@@ -43,5 +53,6 @@ registrationRouter.post('/form', async (req, res) => {
     }
   }
 });
+
 
 module.exports = registrationRouter;
