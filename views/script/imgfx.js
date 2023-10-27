@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => {
             if (response.ok) {
-                window.location.reload();
+                window.location.href = 'http://47.250.10.195:8888/';
             } else {
                 console.error("Error updating the database");
             }
         })
         .catch(error => {
             console.error("Error:", error);
-        });
-    }
+        });
+    }
 });

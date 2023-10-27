@@ -23,13 +23,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4                      {margin-top: 0;
                                                         margin-bottom: 0;}
 p                                                       {font: candara;
                                                         text-align: center;}
-.form-temp                                           {width: 30%;
-                                                        line-height: 2.5;
-                                                        border: none;
-                                                        border-bottom: 2px solid #67696b;
-                                                        background-color: transparent;
-                                                        position: relative;
-                                                        z-index: 1;}
 button                                                  {background-color: #0056b3;
                                                         color: #fff;
                                                         width: 14%;
@@ -49,7 +42,8 @@ button:hover                                            {background-color: #0056
                                                         background-color: #283791;
                                                         z-index: 1;
                                                         transition: width 0.3s;
-                                                        overflow-y: auto;}
+                                                        overflow-y: auto;
+                                                        align-items: center;}
 .sidenav.expanded                                       {width: 210px;} 
 .sidenav a                                              {padding: 16px;
                                                         color: white;
@@ -226,4 +220,4 @@ select                                                  {text-align: justify;
 .eye-icon                                               {font-size: 18px; 
                                                         color: #67696b; 
                                                         margin: 0;}
-#confirmLogout, #cancelLogout                           {font-size: 17px;}                                                        
+#confirmLogout, #cancelLogout                           {font-size: 17px;}
