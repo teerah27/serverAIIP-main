@@ -221,7 +221,6 @@ select                                                  {text-align: justify;
                                                         color: #67696b; 
                                                         margin: 0;}
 #confirmLogout, #cancelLogout                           {font-size: 17px;}
-<<<<<<< Updated upstream
 .modal                                                  {display: none;
                                                         position: fixed;
                                                         z-index: 1;
@@ -246,7 +245,6 @@ select                                                  {text-align: justify;
                                                         color: blue;
                                                         text-decoration: underline;}
 .image-link:hover                                       {color: green;}
-=======
 .manage-container {
     display: flex;
 }
@@ -291,4 +289,3 @@ select                                                  {text-align: justify;
     /* Other styling properties */
     text-align: center;
 }
->>>>>>> Stashed changes
