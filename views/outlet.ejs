@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE ejs>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
-    <link rel="stylesheet" href="design.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Dashboard</title>
+    <title>Database</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container2">
         <header class="header">
             <img src="logo.png" alt="Logo" height="100px">
-            <h2>DASHBOARD</h2>
+            <h2>DATABASE</h2>
         </header>
-        
+
         <div class="sidenav" id="sidenav">
             <a href="/dashboard">
                 <i class="fa fa-bar-chart" aria-hidden="true"></i>
@@ -27,37 +27,39 @@
                 <i class="fa fa-database" aria-hidden="true"></i>
                 <span class="sidenav-label">Database</span>
             </a>
-            <a href="/brand">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span class="sidenav-label">Product</span>
-            </a>
-            <a href="/outlet">
-                <i class="fa-solid fa-store"></i>
-                <span class="sidenav-label">Outlet</span>
-            </a>
             <a href="/login/logout">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span class="sidenav-label">Logout</span>
             </a>
         </div>
-        <div class="content" id="content">
-            <form action="/login/dashboard" method="get">
-                <div class="dashboard">
-                    <iframe id="dashboard-iframe" src="http://47.250.10.195:3000/d/c1406c27-e6cf-4995-9cf5-10ebe0975773/dashboard1?orgId=1&from=1698176084112&to=1698197684112&theme=light&kiosk=tv&transparent=1"></iframe>
 
-                </div>
-            </form>
-        </div>
     </div>
 
+    <div class="manage-container">
+        <div class="section-title">MANAGE OUTLET</div>
+        <form action="/outlet/addOutlet" method="post">  
+            <div class="input-container">
+                <input type="text" class="input-control" id="outlet_name" name="outlet_name" placeholder="Oultet Name" required>
+                <input type="text" class="input-control" id="outlet_location" name="outlet_location" placeholder="Outlet Location" required>
+                <!-- <input type="hidden" id="created_at" name="created_at" value="<%= new Date().toISOString() %>"> -->
+                <button type="submit" class="css-button"> 
+                    <span class="css-button-text">
+                        <span>ADD BRAND<span>
+                    </span>
+                </button>
+            </div>
+        </form>        
+    </div>
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>
         <button id="confirmLogout">Yes</button>
         <button id="cancelLogout">No</button>
     </div>
+    </body>
+    <script src="script/sidenav.js"></script>
+    <script src="script/backbt.js"></script>
+    <script src="script/databasefx.js"></script>
+    <script src="script/logout.js"></script>
 
 </body>
-<script src="script/sidenav.js"></script>
-<script src="script/backbt.js"></script>
-<script src="script/logout.js"></script>
 </html>

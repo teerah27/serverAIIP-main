@@ -221,6 +221,7 @@ select                                                  {text-align: justify;
                                                         color: #67696b; 
                                                         margin: 0;}
 #confirmLogout, #cancelLogout                           {font-size: 17px;}
+<<<<<<< Updated upstream
 .modal                                                  {display: none;
                                                         position: fixed;
                                                         z-index: 1;
@@ -245,3 +246,49 @@ select                                                  {text-align: justify;
                                                         color: blue;
                                                         text-decoration: underline;}
 .image-link:hover                                       {color: green;}
+=======
+.manage-container {
+    display: flex;
+}
+
+.manage-container {
+    display: flex;
+    justify-content: space-around; /* Adjust this value for the desired space between containers */
+    align-items: center; /* Center items vertically */
+    height: 100vh; /* To ensure it occupies the full viewport height */
+}
+
+.brand-container,
+.product-container {
+    width: 40%; /* Adjust width as needed */
+    background-color: #f0f0f0; /* Example background color */
+    padding: 10px; /* Example padding */
+    border-radius: 10px;
+    margin-left: 8%;
+}
+
+.input-control {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    width: 100%; /* Adjust width as needed */
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-title {
+    font-size: 1.5em; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 5%; /* Adjust margin as needed */
+    /* Other styling properties */
+    text-align: center;
+}
+>>>>>>> Stashed changes

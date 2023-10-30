@@ -10,15 +10,8 @@ loginRouter.get('/', (req, res) => {
 
 loginRouter.post('/', async (req, res) => {
   const { email, password } = req.body;
-  const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'Asia/Kuala_Lumpur',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-  }).format(new Date());
 
+  // Retrieve the user's email from the database
   try {
     const query = 'SELECT * FROM user_details WHERE email = $1';
     const { rows } = await pool.query(query, [email]);
@@ -35,6 +28,18 @@ loginRouter.post('/', async (req, res) => {
       console.error('Password does not match');
       return res.status(401).redirect('/login?fail=true');
     }
+
+    // Store the user's email in the session
+    req.session.userEmail = user.email;
+
+    const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Kuala_Lumpur',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    }).format(new Date());
 
     const updateLastLoginQuery = 'UPDATE user_details SET last_login = $1 WHERE email = $2';
     await pool.query(updateLastLoginQuery, [formattedTimestamp, email]);
