@@ -57,3 +57,29 @@ document.addEventListener("DOMContentLoaded", function () {
         noColumn.textContent = index + 1;
     });
 });
+
+function showImage(imagePath) {
+    var modal = document.getElementById("imageModal");
+    var modalImage = document.getElementById("modalImage");
+  
+    modalImage.src = imagePath;
+  
+    modal.style.display = "block";
+  }
+  
+  function closeModal() {
+    var modal = document.getElementById("imageModal");
+  
+    modal.style.display = "none";
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    var imageLinks = document.querySelectorAll(".image-link");
+    imageLinks.forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        var imagePath = link.getAttribute("href");
+        showImage(imagePath);
+      });
+    });
+});

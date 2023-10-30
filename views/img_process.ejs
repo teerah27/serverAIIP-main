@@ -6,7 +6,6 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Process</title>
-
 </head>
 <body>
     <div class="container3">
@@ -28,14 +27,14 @@
                 <i class="fa fa-database" aria-hidden="true"></i>
                 <span class="sidenav-label">Database</span>
             </a>
-            </a>
             <a href="/login/logout">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span class="sidenav-label">Logout</span>
             </a>
         </div>
-        </div>
-        <div class="table-container3" id="table-container3">
+
+    </div>
+    <div class="table-container3" id="table-container3">
         <div class="reg-container">
             <button type="submit" class="css-button">
                 <a href="#" class="delete-record" style="text-decoration: none; color: white;">
@@ -47,13 +46,13 @@
                 </span>
                 </a>
             </button>
-            </div><br><br>
-            <table id="region" class="table" style="width:85%">
+            </div><br><br>
+            <table id="region" class="table" style="width:80%">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Share of Voice</th>
-                    <th>Date</th>
+                    <th>Image URL</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -62,7 +61,7 @@
                     <tr data-id="<%= record.id %>">
                         <td></td>
                         <td><%= record.sov %></td>
-                        <td><%= record.date %></td>
+                        <td><a href="<%= record.image_path %>" class="image-link"><%= record.image_path %></a></td>
                         <td><i class="fa fa-times" style="color: red;" aria-hidden="true"></i></a></td>
                     </tr>
                 <% }); %>
@@ -74,6 +73,10 @@
         <button id="confirmLogout">Yes</button>
         <button id="cancelLogout">No</button>
     </div>
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Image">
+    </div>      
 </body>
 <script src="script/sidenav.js"></script>
 <script src="script/backbt.js"></script>

@@ -40,7 +40,8 @@
                 <tr>
                     <th>No</th>
                     <th>Share of Voice</th>
-                    <th>Date</th>
+                    <th>Image URL</th>
+                    <th>Annotated Image</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -49,7 +50,8 @@
                     <tr>
                         <td></td>
                         <td><%= record.sov %></td>
-                        <td><%= record.date %></td>
+                        <td><a href="<%= record.image_path %>" class="image-link"><%= record.image_path %></a></td>
+                        <td><a href="<%= record.output_path %>" class="image-link"><%= record.output_path %></a></td>
                         <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
                     </tr>
                 <% }); %>
@@ -61,7 +63,11 @@
         <button id="confirmLogout">Yes</button>
         <button id="cancelLogout">No</button>
     </div>
-    </body>
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Image">
+    </div> 
+   </body>
    <script src="script/sidenav.js"></script>
    <script src="script/backbt.js"></script>
    <script src="script/databasefx.js"></script>
