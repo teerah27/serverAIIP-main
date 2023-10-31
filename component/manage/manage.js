@@ -41,7 +41,7 @@ manageRouter.post('/addBrand', (req, res) => {
             console.error(err.stack);
             res.status(500).json({ error: 'Internal Server Error'+ error.message });
         } else {
-            res.redirect('/manage');
+            res.redirect('/manage?brand=true');
         }
     });
 });
@@ -66,7 +66,7 @@ manageRouter.post('/addProduct', (req, res) => {
             console.error(err.stack);
             res.status(500).json({ error: 'Internal Server Error'});
         } else {
-            res.redirect('/manage');
+            res.redirect('/manage?product=true');
         }
     });
 });

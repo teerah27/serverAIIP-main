@@ -5,13 +5,13 @@
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Database</title>
+    <title>Outlets</title>
 </head>
 <body>
     <div class="container2">
         <header class="header">
             <img src="logo.png" alt="Logo" height="100px">
-            <h2>DATABASE</h2>
+            <h2>OUTLETS</h2>
         </header>
 
         <div class="sidenav" id="sidenav">
@@ -26,6 +26,14 @@
             <a href="/database">
                 <i class="fa fa-database" aria-hidden="true"></i>
                 <span class="sidenav-label">Database</span>
+            </a>
+            <a href="/manage">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span class="sidenav-label">Products</span>
+            </a>
+            <a href="/outlet">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span class="sidenav-label">Outlet</span>
             </a>
             <a href="/login/logout">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -56,10 +64,14 @@
         <button id="confirmLogout">Yes</button>
         <button id="cancelLogout">No</button>
     </div>
+    <div id="outlet-popup" class="popup" style="display: none;">
+        <p>Outlet successfully added!</p>
+    </div>
     </body>
     <script src="script/sidenav.js"></script>
+    <script src="script/manageProd.js"></script>
+    <script src="script/addpop.js"></script>
     <script src="script/backbt.js"></script>
-    <script src="script/databasefx.js"></script>
     <script src="script/logout.js"></script>
 
 </body>

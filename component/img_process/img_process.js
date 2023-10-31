@@ -26,7 +26,13 @@ imgprocessRouter.post('/update', (req, res) => {
         const recordComplianceStatus = 'No'; 
         pool.query('UPDATE test_grafana SET compliance_check = \'Yes\' WHERE compliance_check = $1', [recordComplianceStatus], (err, result) => {
             if (!err) {
-                res.status(200).json({ message: 'Records updated successfully' });
+                // Redirect the user to "https://47.250.10.195:8888/" first
+                res.redirect('https://47.250.10.195:8888/');
+
+                // You can add a delay before redirecting to "img_process?process=true" if needed
+                setTimeout(() => {
+                    res.redirect('/img_process?process=true');
+                }, 3000); // 3 seconds delay (adjust as needed)
             } else {
                 console.error('Error updating records:', err);
                 res.status(500).json({ error: 'Internal Server Error' });

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sidenav = document.getElementById("sidenav");
-    const table = document.getElementById("region");
+    const table = document.getElementById("table-container3");
     let originalMarginLeft;
 
     sidenav.addEventListener("mouseenter", function () {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setTableSize(state) {
         if (state === "expanded") {
-            table.style.marginLeft = "17%"; 
+            table.style.marginLeft = "10%"; 
         } else {
             table.style.marginLeft = originalMarginLeft; 
         }
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => {
             if (response.ok) {
-                window.location.href = 'http://47.250.10.195:8888/';
+                res.redirect('/img_process');
             } else {
                 console.error("Error updating the database");
             }
@@ -106,4 +106,38 @@ function showImage(imagePath) {
         showImage(imagePath);
       });
     });
+
+    const processButton = document.querySelector(".css-button a");
+    const processConfirmation = document.getElementById("processConfirmation");
+    const confirmProcessButton = document.getElementById("confirmProcess");
+    const cancelProcessButton = document.getElementById("cancelProcess");
+
+    processButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        processConfirmation.style.display = "block";
+    });
+
+    confirmProcessButton.addEventListener("click", () => {
+        // Redirect the user to "https://47.250.10.195:8888/" first
+        res.redirect('/update');
+    });
+    
+    cancelProcessButton.addEventListener("click", () => {
+        processConfirmation.style.display = "none";
+    });
+
+    function showProcessPopup() {
+        const processPopup = document.getElementById('process-popup');
+        processPopup.style.display = 'block';
+
+        setTimeout(function() {
+            processPopup.style.display = 'none';
+        }, 3000);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('process') && urlParams.get('process') === 'true') {
+        showProcessPopup();
+    }
 });

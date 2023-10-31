@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setTableSize(state) {
         if (state === "expanded") {
-            table.style.marginLeft = "17%"; 
+            table.style.marginLeft = "10%"; 
         } else {
             table.style.marginLeft = originalMarginLeft; 
         }

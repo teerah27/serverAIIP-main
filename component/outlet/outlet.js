@@ -31,7 +31,7 @@ outletRouter.post('/addOutlet', async (req, res) => {
 
         await pool.query(insertQuery, values);
 
-        res.status(200).send('success');
+        res.redirect('/outlet?outlet=true');
     } catch (error) {
         console.error(error); 
         res.status(500).send('Internal server error: ' + error.message); 

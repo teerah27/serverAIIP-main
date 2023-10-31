@@ -27,6 +27,14 @@
                 <i class="fa fa-database" aria-hidden="true"></i>
                 <span class="sidenav-label">Database</span>
             </a>
+            <a href="/manage">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span class="sidenav-label">Products</span>
+            </a>
+            <a href="/outlet">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span class="sidenav-label">Outlet</span>
+            </a>
             <a href="/login/logout">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span class="sidenav-label">Logout</span>
@@ -38,14 +46,14 @@
         <div class="reg-container">
             <button type="submit" class="css-button">
                 <a href="#" class="delete-record" style="text-decoration: none; color: white;">
-                <span class="css-button-text">
-                    <span>Process</span>
-                </span>
-                <span class="=css-button-icon">
-                    <i class="fa fa-refresh"></i>
-                </span>
+                    <span class="css-button-text">
+                        <span>Process</span>
+                    </span>
+                    <span class="css-button-icon">
+                        <i class="fa fa-refresh"></i>
+                    </span>
                 </a>
-            </button>
+            </button>            
             </div><br><br>
             <table id="region" class="table" style="width:80%">
             <thead>
@@ -76,7 +84,15 @@
     <div id="imageModal" class="modal">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <img id="modalImage" src="" alt="Image">
-    </div>      
+    </div>
+    <div id="processConfirmation" class="processpopup">
+        <p>You are about to process the image(s)</p>
+        <button id="confirmProcess">Continue</button>
+        <button id="cancelProcess">Abort</button>
+    </div>
+    <div id="process-popup" class="popup" style="display: none;">
+        <p>The image(s) have been processed!</p>
+    </div>
 </body>
 <script src="script/sidenav.js"></script>
 <script src="script/backbt.js"></script>
