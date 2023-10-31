@@ -9,8 +9,7 @@ const loginRouter = require('./component/login/login');
 const dashboardRouter = require('./component/dashboard/dashboard');
 const databaseRouter = require('./component/database/database');
 const imgprocessRouter = require('./component/img_process/img_process');
-const brandRouter = require('./component/brand/brand');
-const productRouter = require('./component/product/product');
+const manageRouter = require('./component/manage/manage');
 const outletRouter = require('./component/outlet/outlet');
 
 //Imran
@@ -58,8 +57,7 @@ app.use('/dashboard', dashboardRouter);
 app.use('/database', databaseRouter);
 app.use('/img_process', imgprocessRouter);
 app.use('/outlet', outletRouter);
-app.use('/brand', brandRouter);
-app.use('/product', productRouter);
+app.use('/manage', manageRouter);
 
 app.listen(3030, () => {
   console.log('Server started on http://localhost:3030');

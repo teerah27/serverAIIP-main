@@ -38,16 +38,8 @@
     <div class="manage-container">
         <div class="brand-container">
             <div class="section-title">ADD BRAND</div>
-            <form action="/brand/addBrand" method="post">  
-                <div class="input-container">
-                    <select id="outlet" name="outlet">
-                        <option value="" selected disabled>Select Outlet</option>
-                        <% brandData.forEach(outlet => { %>
-                            <option value="<%= outlet.id %>">
-                                <%= outlet.outlet_name %>
-                            </option>
-                        <% }); %>
-                    </select>                   
+            <form action="/manage/addBrand" method="post">  
+                <div class="input-container">                  
                     <input type="text" class="input-control" id="brand_name" name="brand_name" placeholder="Brand Name" required>
                     <button type="submit" class="css-button"> 
                         <span class="css-button-text">
@@ -57,6 +49,29 @@
                 </div>
             </form>
         </div>
+
+        <div class="brand-container">
+            <div class="section-title">ADD PRODUCT</div>
+            <form action="/manage/addProduct" method="post">  
+                <div class="input-container">
+                    <select id="brand" name="brand">
+                        <option value="" selected disabled>Select brand</option>
+                        <% brandData.forEach(brand => { %>
+                            <option value="<%= brand.id %>">
+                                <%= brand.brand_name %>
+                            </option>
+                        <% }); %>
+                    </select>                 
+                    <input type="text" class="input-control" id="product_name" name="product_name" placeholder="Product Name" required>
+                    <button type="submit" class="css-button"> 
+                        <span class="css-button-text">
+                            <span>ADD PRODUCT<span>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 

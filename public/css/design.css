@@ -263,6 +263,7 @@ select                                                  {text-align: justify;
     padding: 10px; /* Example padding */
     border-radius: 10px;
     margin-left: 8%;
+    align-items: center;
 }
 
 .input-control {
@@ -279,6 +280,7 @@ select                                                  {text-align: justify;
 
 .input-container {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
 }
