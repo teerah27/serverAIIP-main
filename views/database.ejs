@@ -34,7 +34,7 @@
         </div>
 
     </div>
-    <div class="table-container2">  
+    <div class="table-container2" id="table-container2">
         <table id="region" class="table" style="width:80%">
             <thead>
                 <tr>
@@ -51,7 +51,7 @@
                         <td></td>
                         <td><%= record.sov %></td>
                         <td><a href="<%= record.image_path %>" class="image-link"><%= record.image_path %></a></td>
-                        <td><a href="<%= record.output_path %>" class="image-link"><%= record.output_path %></a></td>
+                        <td><a href="<%= record.output_path %>" class="image-link green"><%= record.output_path %></a></td>
                         <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
                     </tr>
                 <% }); %>
@@ -67,7 +67,7 @@
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <img id="modalImage" src="" alt="Image">
     </div> 
-   </body>
+</body>
    <script src="script/sidenav.js"></script>
    <script src="script/backbt.js"></script>
    <script src="script/databasefx.js"></script>

@@ -251,14 +251,14 @@ select                                                  {text-align: justify;
 
 .manage-container {
     display: flex;
-    justify-content: space-around; /* Adjust this value for the desired space between containers */
     align-items: center; /* Center items vertically */
     height: 100vh; /* To ensure it occupies the full viewport height */
 }
 
+.outlet-container,
 .brand-container,
 .product-container {
-    width: 40%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     background-color: #f0f0f0; /* Example background color */
     padding: 10px; /* Example padding */
     border-radius: 10px;
@@ -289,3 +289,8 @@ select                                                  {text-align: justify;
     /* Other styling properties */
     text-align: center;
 }
+.image-link                                             {cursor: pointer;
+    color: blue;
+    text-decoration: underline;}                                                        
+.image-link:hover                                       {color: red;}
+.image-link.green:hover                                 {color: green;}
