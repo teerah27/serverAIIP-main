@@ -7,7 +7,7 @@ databaseRouter.get('/', (req, res) => {
 
     if (req.session.user) {
         // pool.query('SELECT * FROM test_grafana WHERE compliance_check = \'Yes\'', (err, result) => {
-        pool.query('SELECT * FROM table_oss', (err, result) => {
+        pool.query('SELECT * FROM table_oss ', (err, result) => {
             
             if (!err) {
                 res.render('database', { data: result.rows }); 
