@@ -45,7 +45,7 @@
     <div class="table-container3" id="table-container3">
         <div class="reg-container">
             <button type="submit" class="css-button">
-                <a href="#" class="delete-record" style="text-decoration: none; color: white;">
+                <a class="delete-record" style="text-decoration: none; color: white; box-shadow: 0 0 10px #0056b3;">
                     <span class="css-button-text">
                         <span>Process</span>
                     </span>
@@ -69,7 +69,7 @@
                     <tr data-id="<%= record.id %>">
                         <td></td>
                         <td><%= record.sov %></td>
-                        <td><a href="<%= record.image_path %>" class="image-link"><%= record.image_path %></a></td>
+                        <td><a href="<%= record.image_path %>" class="image-link"style="font-family: 'OpenSans', sans-serif;"><%= record.image_path %></a></td>
                         <td><i class="fa fa-times" style="color: red;" aria-hidden="true"></i></a></td>
                     </tr>
                 <% }); %>
