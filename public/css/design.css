@@ -298,21 +298,21 @@ margin-right: 10%;}
                                                         transition: margin-left 0.3s;
                                                         align-items: center;
                                                         height: 100vh;}
-.manage-container-outlet                                 {display: flex;
+.manage-container-outlet                                {display: flex;
                                                         flex-direction: column;
-                                                        padding: 7% 7%;
+                                                        padding-top: 7%;
                                                         margin-right: 10%;
                                                         transition: margin-left 0.3s;
                                                         align-items: center;
-                                                        margin-left: 10%;
-                                                        height: 100vh;}
-.outlet-container                                       {width: 45%;
-                                                        background-color: #f0f0f0;
-                                                        padding: 2%;
-                                                        margin-top: 2.6%;
-                                                        margin-bottom: 5%;
-                                                        border-radius: 10px;
                                                         margin-left: 8%;
+                                                        height: 100vh;}
+.outlet-container                                       {width: 100%;
+                                                        background-color: #f0f0f0;
+                                                        padding-top: 2%;
+                                                        margin-top: 2.6%;
+                                                        margin-bottom: 2%;
+                                                        border-radius: 10px;
+                                                        margin-left: 10%;
                                                         align-items: center;}
 .product-container                                      {width: 80%;
                                                         background-color: #f0f0f0;
@@ -335,14 +335,29 @@ margin-right: 10%;}
                                                         box-sizing: border-box;
                                                         position: relative;
                                                         text-align: center;}
+.input-control-outlet                                   {border: 1px solid #ccc;
+                                                        background-color: #fff;
+                                                        border-radius: 15px;
+                                                        padding: 10px;
+                                                        margin: 5px;
+                                                        width: 26%; 
+                                                        box-sizing: border-box;
+                                                        position: relative;
+                                                        text-align: center;}
+.input-container-outlet                                 {display: flex;
+                                                        padding-top: 0%;
+                                                        margin-left: 1%;
+                                                        width: 160%;
+                                                        position: relative;
+                                                        align-items: center;}
 .input-container                                        {display: flex;
                                                         position: relative;
                                                         flex-direction: column;
-                                                        align-items: center;}
+                                                        align-items:center;}
 .section-title                                          {font-size: 1.5em; 
                                                         font-weight:800;
                                                         font-family: 'OpenSans', sans-serif;
-                                                        margin-bottom: 5%; 
+                                                        margin-bottom: 1%; 
                                                         text-align: center;}
 .image-link                                             {cursor: pointer;
                                                         color: blue;
@@ -369,4 +384,8 @@ margin-right: 10%;}
                                                         cursor: pointer;
                                                         width: fit-content;
                                                         font-size: 16px;}
+.button-container-outlet                                {height: 10%;
+                                                        margin-left: 1%;
+                                                        width: 11%;}
+                                                        
                                                         

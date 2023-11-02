@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setManageContainerSize(state) {
         if (state === "expanded") {
-            manageContainer.style.marginLeft = "10%"; 
+            manageContainer.style.marginLeft = "7%"; 
         } else {
             manageContainer.style.marginLeft = originalMarginLeft;
         }

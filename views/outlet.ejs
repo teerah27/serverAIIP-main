@@ -47,19 +47,23 @@
         <div class="outlet-container">
         <div class="section-title">MANAGE OUTLET</div>
         <form action="/outlet/addOutlet" method="post">  
-            <div class="input-container">
-                <input type="text" class="input-control" id="outlet_name" name="outlet_name" placeholder="Oultet Name" required>
-                <input type="text" class="input-control" id="outlet_location" name="outlet_location" placeholder="Outlet Location" required><br>
-                <button type="submit" class="css-outlet"> 
-                    <span class="css-button-text">
-                        <span>ADD OUTLET<span>
-                    </span>
-                </button>
+            <div class="input-container-outlet">
+                <input type="text" class="input-control-outlet" id="outlet_name" name="outlet_name" placeholder="Oultet Name" required>
+                <input type="text" class="input-control-outlet" id="outlet_location" name="outlet_location" placeholder="Outlet Location" required><br>
+                <div class="button-container-outlet"> <!-- Create a container for the button -->
+                    <button type="submit" class="css-outlet"> 
+                        <span class="css-button-text">
+                            <span>ADD OUTLET<span>
+                        </span>
+                    </button>
+                </div>
+    
             </div>
+
         </form>  
         </div>    
         <div style="clear:both;"></div>
-        <table id="region " style="width: 120%" class="table">
+        <table id="region " style="width: 100%" class="table">
             <thead>
                 <tr>
                     <th>No</th>
