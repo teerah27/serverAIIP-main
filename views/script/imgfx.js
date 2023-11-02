@@ -67,29 +67,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateDatabase() {
         fetch('/img_process/update', {
-            method: 'POST',
+            method: "POST",
         })
         .then(response => {
             if (response.ok) {
-                // Delay before redirecting
-                setTimeout(() => {
-                    console.log('success direct to 8888')
-                    window.location.href = 'http://47.250.10.195:8888/';
-                }, 2000); // Adjust the delay time in milliseconds (e.g., 2000 milliseconds = 2 seconds)
-                setTimeout(() => {
-                    window.location.href = '/img_process?process=true';
-                }, 2000);
+                res.redirect('/img_process');
             } else {
-                console.error('Error updating the database');
-                // You can add error handling or redirect to the desired page on error
+                console.error("Error updating the database");
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            // You can add error handling or redirect to the desired page on error
+            console.error("Error:", error);
         });
     }
-});    
+});
 
 function showImage(imagePath) {
     var modal = document.getElementById("imageModal");
@@ -126,11 +117,9 @@ function showImage(imagePath) {
         processConfirmation.style.display = "block";
     });
 
-    confirmProcessButton.addEventListener("click", () => {    
-        // Initiate the update process
-        updateDatabase();
-        // Close the process confirmation popup
-        processConfirmation.style.display = "none";
+    confirmProcessButton.addEventListener("click", () => {
+        // Redirect the user to "http://47.250.10.195:8888/"
+        window.location.href = "http://47.250.10.195:8888/";
     });
     
     cancelProcessButton.addEventListener("click", () => {

@@ -43,12 +43,13 @@
 
     </div>
     <div class="table-container2" id="table-container2">
-        <table id="region" class="table">
+        <table id="region" class="table" style="width:90%">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Share of Voice</th>
-                    <th>Image URL</th>
+                    <th>Van ID</th>
+                    <th>Outlet</th>
+                    <th>Original Image</th>
                     <th>Annotated Image</th>
                     <th>Status</th>
                 </tr>
@@ -57,9 +58,10 @@
                 <% data.forEach((record, index) => { %>
                     <tr>
                         <td></td>
-                        <td><%= record.sov %></td>
-                        <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><%= record.image_path %></a></td>
-                        <td><a href="<%= record.output_path %>" class="image-link green" style="font-family: 'OpenSans', sans-serif;"><%= record.output_path %></a></td>
+                        <td><%= record.van_id %></td>
+                        <td><%= record.outlet %></td>
+                        <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
+                        <td><a href="<%= record.output_path %>" class="image-link green" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.output_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
                         <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
                     </tr>
                 <% }); %>
