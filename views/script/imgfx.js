@@ -118,8 +118,8 @@ function showImage(imagePath) {
     });
 
     confirmProcessButton.addEventListener("click", () => {
-        // Redirect the user to "https://47.250.10.195:8888/" first
-        res.redirect('/update');
+        // Redirect the user to "http://47.250.10.195:8888/"
+        window.location.href = "http://47.250.10.195:8888/";
     });
     
     cancelProcessButton.addEventListener("click", () => {

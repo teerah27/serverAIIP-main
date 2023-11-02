@@ -6,8 +6,7 @@ imgprocessRouter.get('/', (req, res) => {
     res.set('Cache-Control', 'no-store, must-revalidate');
 
     if (req.session.user) {
-        // pool.query('SELECT * FROM test_grafana WHERE compliance_check = \'No\'', (err, result) => {
-        pool.query('SELECT * FROM table_oss', (err, result) => {
+        pool.query('SELECT * FROM table_oss WHERE compliance_check = \'Non-compliance\'', (err, result) => {
             if (!err) {
                 res.render('img_process', { data: result.rows });
             } else {
@@ -23,16 +22,19 @@ imgprocessRouter.get('/', (req, res) => {
 
 imgprocessRouter.post('/update', (req, res) => {
     if (req.session.user) {
-        const recordComplianceStatus = 'No'; 
-        pool.query('UPDATE test_grafana SET compliance_check = \'Yes\' WHERE compliance_check = $1', [recordComplianceStatus], (err, result) => {
+        const recordComplianceStatus = 'Non-compliance'; 
+        pool.query('UPDATE table_oss SET compliance_check = $1 WHERE compliance_check = $2', ['Compliance', recordComplianceStatus], (err, result) => {
             if (!err) {
-                // Redirect the user to "https://47.250.10.195:8888/" first
-                res.redirect('https://47.250.10.195:8888/');
-
-                // You can add a delay before redirecting to "img_process?process=true" if needed
-                setTimeout(() => {
-                    res.redirect('/img_process?process=true');
-                }, 3000); // 3 seconds delay (adjust as needed)
+                console.log('Database updated successfully');
+                // Redirect to the first URL on the client side
+                
+                res.redirect('http://47.250.10.195:8888/');
+                if (!err) {
+                    console.log('Redirecting to http://47.250.10.195:8888/');
+                } else {
+                    console.error('Error going to 8888:', err);
+                    res.status(500).json({ error: 'Internal Server Error' });
+                }
             } else {
                 console.error('Error updating records:', err);
                 res.status(500).json({ error: 'Internal Server Error' });

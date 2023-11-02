@@ -45,7 +45,7 @@
     <div class="table-container3" id="table-container3">
         <div class="reg-container">
             <button type="submit" class="css-button">
-                <a class="delete-record" style="text-decoration: none; color: white; box-shadow: 0 0 10px #0056b3;">
+                <a style="text-decoration: none; color: white;">
                     <span class="css-button-text">
                         <span>Process</span>
                     </span>
@@ -59,8 +59,9 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Share of Voice</th>
-                    <th>Image URL</th>
+                    <th>Van ID</th>
+                    <th>Outlet</th>
+                    <th>Original Image</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -68,8 +69,9 @@
                 <% data.forEach((record, index) => { %>
                     <tr data-id="<%= record.id %>">
                         <td></td>
-                        <td><%= record.sov %></td>
-                        <td><a href="<%= record.image_path %>" class="image-link"style="font-family: 'OpenSans', sans-serif;"><%= record.image_path %></a></td>
+                        <td><%= record.van_id %></td>
+                        <td><%= record.outlet %></td>
+                        <td><a href="<%= record.image_path %>" class="image-link"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></td>
                         <td><i class="fa fa-times" style="color: red;" aria-hidden="true"></i></a></td>
                     </tr>
                 <% }); %>
@@ -87,7 +89,7 @@
     </div>
     <div id="processConfirmation" class="processpopup">
         <p>You are about to process the image(s)</p>
-        <button id="confirmProcess">Continue</button>
+        <button id="confirmProcess" class="delete-record">Continue</button>
         <button id="cancelProcess">Abort</button>
     </div>
     <div id="process-popup" class="popup" style="display: none;">
