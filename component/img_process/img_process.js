@@ -23,7 +23,18 @@ imgprocessRouter.get('/', (req, res) => {
 imgprocessRouter.post('/update', (req, res) => {
     if (req.session.user) {
         const recordComplianceStatus = 'Non-compliance'; 
-        pool.query('UPDATE table_oss SET compliance_check = $1 WHERE compliance_check = $2', ['Compliance', recordComplianceStatus], (err, result) => {
+        const loggedInName = req.session.userEmail;
+
+        const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Asia/Kuala_Lumpur',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+        }).format(new Date());
+
+        pool.query('UPDATE table_oss SET compliance_check = $1, created_at = $2, created_by = $3 WHERE compliance_check = $4', ['Compliance', formattedTimestamp, loggedInName, recordComplianceStatus], (err, result) => {
             if (!err) {
                 console.log('Database updated successfully');
                 // Redirect to the first URL on the client side
