@@ -43,7 +43,7 @@
 
     </div>
 
-    <div class="manage-container-outlet">
+    <div class="manage-container-outlet" id="manage-container-outlet">
         <div class="outlet-container">
         <div class="section-title">MANAGE OUTLET</div>
         <form action="/outlet/addOutlet" method="post">  
@@ -57,7 +57,26 @@
                 </button>
             </div>
         </form>  
-        </div>     
+        </div>    
+        <div style="clear:both;"></div>
+        <table id="region " style="width: 120%" class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Outlet Name</th>
+                    <th>Outlet Location</th>
+                </tr>
+            </thead>
+            <% data.forEach((record, index) => { %>
+                <tr>
+                    <td></td>
+                    <td><%= record.outlet_name %></td>
+                    <td><%= record.outlet_location %></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div> 
     </div>
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>
@@ -68,11 +87,10 @@
         <p>Outlet successfully added!</p>
     </div>
     </body>
-    <script src="script/sidenav.js"></script>
-    <script src="script/manageProd.js"></script>
+    <script src="script/outletfx.js"></script>
     <script src="script/addpop.js"></script>
     <script src="script/backbt.js"></script>
     <script src="script/logout.js"></script>
-
+    
 </body>
 </html>

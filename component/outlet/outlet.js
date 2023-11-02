@@ -3,8 +3,23 @@ const outletRouter = express.Router();
 const pool = require('../db/db');
 const { v4: uuidv4 } = require('uuid');
 
+
 outletRouter.get('/', (req, res) => {
-    res.render('outlet');
+    res.set('Cache-Control', 'no-store, must-revalidate');
+
+    if (req.session.user) {
+        pool.query('SELECT * FROM outlets ', (err, result) => {
+            if (!err) {
+                res.render('outlet', { data: result.rows });
+            } else {
+                console.error('Error executing SQL query:', err);
+                console.error(err.stack);
+                res.status(500).json({ error: 'Internal Server Error' });
+            }
+        });
+    } else {
+        res.redirect('/login');
+    }
 });
 
 outletRouter.post('/addOutlet', async (req, res) => {
@@ -37,5 +52,7 @@ outletRouter.post('/addOutlet', async (req, res) => {
         res.status(500).send('Internal server error: ' + error.message); 
     }
 });
+
+
 
 module.exports = outletRouter;

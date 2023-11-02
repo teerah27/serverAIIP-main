@@ -295,18 +295,22 @@ margin-right: 10%;}
 .image-link:hover                                       {color: green;}
 .manage-container                                       {display: flex;
                                                         padding: 7% 7%;
-                                                        align-items: center;
                                                         transition: margin-left 0.3s;
+                                                        align-items: center;
                                                         height: 100vh;}
 .manage-container-outlet                                 {display: flex;
+                                                        flex-direction: column;
                                                         padding: 7% 7%;
-                                                        align-items: center;
-                                                        margin-left: 30%;
+                                                        margin-right: 10%;
                                                         transition: margin-left 0.3s;
+                                                        align-items: center;
+                                                        margin-left: 10%;
                                                         height: 100vh;}
 .outlet-container                                       {width: 45%;
                                                         background-color: #f0f0f0;
                                                         padding: 2%;
+                                                        margin-top: 2.6%;
+                                                        margin-bottom: 5%;
                                                         border-radius: 10px;
                                                         margin-left: 8%;
                                                         align-items: center;}
@@ -365,3 +369,4 @@ margin-right: 10%;}
                                                         cursor: pointer;
                                                         width: fit-content;
                                                         font-size: 16px;}
+                                                        
