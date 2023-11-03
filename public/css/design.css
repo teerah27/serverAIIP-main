@@ -322,6 +322,7 @@ select                                                  {text-align: justify;
                                                         padding: 2%;
                                                         border-radius: 10px;
                                                         margin-left: 3%;
+                                                        margin-top: 3%;
                                                         align-items: center;}
 .brand-container                                        {width: 190%;
                                                         background-color: #f0f0f0;
@@ -329,6 +330,7 @@ select                                                  {text-align: justify;
                                                         padding: 3.1%;
                                                         border-radius: 10px;
                                                         margin-left: 9.3%;
+                                                        margin-top: 3%;
                                                         align-items: center;}
 .input-control                                          {border: 1px solid #ccc;
                                                         background-color: #fff;

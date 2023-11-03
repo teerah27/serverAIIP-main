@@ -27,6 +27,10 @@
                 <i class="fa fa-database" aria-hidden="true"></i>
                 <span class="sidenav-label">Database</span>
             </a>
+            <a href="/reject">
+                <i class="fa fa-ban" aria-hidden="true"></i>
+                <span class="sidenav-label">Rejected Images</span>
+            </a>
             <a href="/manage">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 <span class="sidenav-label">Products</span>
@@ -47,7 +51,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Van ID</th>
+                    <th>Van Name</th>
                     <th>Outlet</th>
                     <th>Original Image</th>
                     <th>Annotated Image</th>
@@ -58,8 +62,8 @@
                 <% data.forEach((record, index) => { %>
                     <tr>
                         <td></td>
-                        <td><%= record.van_user_id %></td>
-                        <td><%= record.outlet_id %></td>
+                        <td><%= record.first_name %> <%= record.last_name %></td>
+                        <td><%= record.outlet_name %></td>
                         <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
                         <td><a href="<%= record.annotated_path %>" class="image-link green" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.annotated_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
                         <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
