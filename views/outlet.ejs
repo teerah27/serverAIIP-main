@@ -73,18 +73,31 @@
                     <th>No</th>
                     <th>Outlet Name</th>
                     <th>Outlet Location</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <% data.forEach((record, index) => { %>
-                <tr>
-                    <td></td>
-                    <td><%= record.outlet_name %></td>
-                    <td><%= record.outlet_location %></td>
-                </tr>
-            <% }); %>
+            <tbody>
+                <% data.forEach((record, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= record.outlet_name %></td>
+                        <td><%= record.outlet_location %></td>
+                        <td>
+                            <button class="delete-outlet-btn" data-outlet-id="<%= record.id %>" data-outlet-name="<%= record.outlet_name %>" style="width: 50%;">Delete</button>
+                        </td>
+                    </tr>
+                <% }); %>
             </tbody>
+            
         </table>
     </div> 
+    </div>
+    <div id="confirm-delete" class="modal">
+        <div class="modal-content">
+            <p id="delete-confirmation-text"></p>
+            <button id="confirmDelete">Yes</button>
+            <button id="cancelDelete">No</button>
+        </div>
     </div>
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>

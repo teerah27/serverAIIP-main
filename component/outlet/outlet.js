@@ -53,6 +53,21 @@ outletRouter.post('/addOutlet', async (req, res) => {
     }
 });
 
+outletRouter.delete('/deleteOutlet/:id', async (req, res) => {
+    const outletId = req.params.id;
+
+    try {
+        // Perform the deletion operation in the database
+        await pool.query('DELETE FROM outlets WHERE id = $1', [outletId]);
+
+        res.sendStatus(204); // Send a 204 (No Content) status for a successful deletion
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal server error: ' + error.message);
+    }
+});
+
+
 
 
 module.exports = outletRouter;
