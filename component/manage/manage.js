@@ -17,24 +17,30 @@ manageRouter.get('/', async (req, res) => {
             const productCount = countResult.rows[0].productCount;
 
             // Construct the SQL query based on the product count
-            let sqlQuery;
-            if (productCount > 0) {
-                sqlQuery = 'SELECT b.brand_name, p.product_name FROM brands AS b LEFT JOIN products AS p ON b.id = p.brand_id ORDER BY b.brand_name, p.product_name';
-            } else {
-                sqlQuery = 'SELECT * FROM brands';
-            }
+            let brandQuery = 'SELECT * FROM brands';
+            let productQuery = 'SELECT b.brand_name, p.product_name FROM brands AS b LEFT JOIN products AS p ON b.id = p.brand_id ORDER BY b.brand_name, p.product_name';
+            
 
             // Execute the SQL query
-            pool.query(sqlQuery, (queryErr, queryResult) => {
-                if (queryErr) {
-                    console.error('Error executing SQL query:', queryErr);
-                    console.error(queryErr.stack);
+            pool.query(brandQuery, (brandErr, brandResult) => {
+                if (brandErr) {
+                    console.error('Error executing brand SQL query:', brandErr);
                     res.status(500).json({ error: 'Internal Server Error' });
                     return;
                 }
-                const brandData = queryResult.rows;
-                res.render('manage', { brandData: brandData, data: brandData }); // Pass both brandData and data to the view
+                const brandData = brandResult.rows;
+            
+                pool.query(productQuery, (productErr, productResult) => {
+                    if (productErr) {
+                        console.error('Error executing product SQL query:', productErr);
+                        res.status(500).json({ error: 'Internal Server Error' });
+                        return;
+                    }
+                    const productData = productResult.rows;
+                    res.render('manage', { brandData: brandData, data: productData }); // Pass brandData and productData separately to the view
+                });
             });
+            
         });
     } else {
         res.redirect('/login');

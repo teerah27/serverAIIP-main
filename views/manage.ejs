@@ -81,25 +81,25 @@
                 </div>
             </form>
         </div>
-    </div>
-
-    <table id="region" style="width: 100%;" class="table">
-        <thead>
-            <tr>
-                <th>Brand Name</th>
-                <th>Product Name</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <% data.forEach(item => { %>
+        <div style="clear:both;"></div>
+        <table id="region " style="width: 110%" class="table">
+            <thead>
                 <tr>
+                    <th>No</th>
+                    <th>Brand</th>
+                    <th>Product</th>
+                </tr>
+            </thead>
+            <% data.forEach((item, index) => { %>
+                <tr>
+                    <td></td>
                     <td><%= item.brand_name %></td>
                     <td><%= item.product_name %></td>
                 </tr>
             <% }); %>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>

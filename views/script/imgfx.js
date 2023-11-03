@@ -50,12 +50,12 @@
 //         }
 //     }
 
-//     const tableRows = document.querySelectorAll('tbody tr');
+    // const tableRows = document.querySelectorAll('tbody tr');
 
-//     tableRows.forEach((row, index) => {
-//         const noColumn = row.querySelector('td:first-child');
-//         noColumn.textContent = index + 1;
-//     });
+    // tableRows.forEach((row, index) => {
+    //     const noColumn = row.querySelector('td:first-child');
+    //     noColumn.textContent = index + 1;
+    // });
 
 //     const deleteButtons = document.querySelectorAll(".delete-record");
 //     deleteButtons.forEach(function(button) {
@@ -226,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
 function showImage(imagePath) {
     var modal = document.getElementById("imageModal");
     var modalImage = document.getElementById("modalImage");
@@ -283,5 +284,5 @@ function showImage(imagePath) {
 
     if (urlParams.has('process') && urlParams.get('process') === 'true') {
         showProcessPopup();
-    }
+}
 });

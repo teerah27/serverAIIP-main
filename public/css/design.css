@@ -294,6 +294,8 @@ margin-right: 10%;}
                                                         text-decoration: underline;}
 .image-link:hover                                       {color: green;}
 .manage-container                                       {display: flex;
+                                                        flex-wrap: wrap;
+                                                        justify-content: space-between;
                                                         padding: 7% 7%;
                                                         transition: margin-left 0.3s;
                                                         align-items: center;
@@ -314,17 +316,19 @@ margin-right: 10%;}
                                                         border-radius: 10px;
                                                         margin-left: 10%;
                                                         align-items: center;}
-.product-container                                      {width: 80%;
+.product-container                                      {width: 190%;
                                                         background-color: #f0f0f0;
+                                                        flex: 1;
                                                         padding: 2%;
                                                         border-radius: 10px;
-                                                        margin-left: 8%;
+                                                        margin-left: 3%;
                                                         align-items: center;}
-.brand-container                                        {width: 80%;
+.brand-container                                        {width: 190%;
                                                         background-color: #f0f0f0;
+                                                        flex: 1;
                                                         padding: 3.1%;
                                                         border-radius: 10px;
-                                                        margin-left: 8%;
+                                                        margin-left: 9.3%;
                                                         align-items: center;}
 .input-control                                          {border: 1px solid #ccc;
                                                         background-color: #fff;

@@ -21,4 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
             manageContainer.style.marginLeft = originalMarginLeft;
         }
     }
+    const tableRows = document.querySelectorAll('tbody tr');
+
+tableRows.forEach((row, index) => {
+    const noColumn = row.querySelector('td:first-child');
+    noColumn.textContent = index + 1;
 });
+
+});
+
+
