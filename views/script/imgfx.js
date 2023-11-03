@@ -21,6 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
             table.style.marginLeft = originalMarginLeft; 
         }
     }
+    let sidenavLinks = document.querySelectorAll('.sidenav a');
+
+    sidenavLinks.forEach(function(link) {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
     
     function showRows(database) {
         var rows = document.querySelectorAll("#database tr");

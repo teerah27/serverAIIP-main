@@ -27,6 +27,13 @@ tableRows.forEach((row, index) => {
     const noColumn = row.querySelector('td:first-child');
     noColumn.textContent = index + 1;
 });
+let sidenavLinks = document.querySelectorAll('.sidenav a');
+
+sidenavLinks.forEach(function(link) {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+});
 
 });
 

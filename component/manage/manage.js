@@ -5,7 +5,6 @@ const { v4: uuidv4 } = require('uuid');
 
 manageRouter.get('/', async (req, res) => {
     if (req.session.user) {
-        // Check if there are any rows in the products table
         pool.query('SELECT COUNT(*) AS productCount FROM products', (countErr, countResult) => {
             if (countErr) {
                 console.error('Error checking product table:', countErr);
@@ -14,14 +13,9 @@ manageRouter.get('/', async (req, res) => {
                 return;
             }
 
-            const productCount = countResult.rows[0].productCount;
-
-            // Construct the SQL query based on the product count
             let brandQuery = 'SELECT * FROM brands';
             let productQuery = 'SELECT b.brand_name, p.product_name FROM brands AS b LEFT JOIN products AS p ON b.id = p.brand_id ORDER BY b.brand_name, p.product_name';
             
-
-            // Execute the SQL query
             pool.query(brandQuery, (brandErr, brandResult) => {
                 if (brandErr) {
                     console.error('Error executing brand SQL query:', brandErr);
@@ -37,7 +31,7 @@ manageRouter.get('/', async (req, res) => {
                         return;
                     }
                     const productData = productResult.rows;
-                    res.render('manage', { brandData: brandData, data: productData }); // Pass brandData and productData separately to the view
+                    res.render('manage', { brandData: brandData, data: productData });
                 });
             });
             
@@ -47,10 +41,8 @@ manageRouter.get('/', async (req, res) => {
     }
 });
 
-
-
 manageRouter.post('/addBrand', (req, res) => {
-    const { brand_name } = req.body; // Assuming 'outlet' and 'brand_name' are sent from the form
+    const { brand_name } = req.body; 
     const brandid = uuidv4();
     const loggedInName = req.session.userEmail;
 
@@ -75,7 +67,7 @@ manageRouter.post('/addBrand', (req, res) => {
 });
 
 manageRouter.post('/addProduct', (req, res) => {
-    const { brand, product_name } = req.body; // Assuming 'outlet' and 'brand_name' are sent from the form
+    const { brand, product_name } = req.body; 
     const brandid = uuidv4();
     const loggedInName = req.session.userEmail;
 

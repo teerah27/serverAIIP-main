@@ -370,7 +370,8 @@ select                                                  {text-align: justify;
                                                         text-decoration: underline;}                                                        
 .image-link:hover                                       {color: red;}
 .image-link.green:hover                                 {color: green;}
-.sidenav a.active                                       {background-color: #007bff;}
+.sidenav a.active                                       {background-color: white; /* Change this color to what you want for the active state */
+                                                        color: #0074D9;}
 .processpopup                                           {display: none;
                                                         position: fixed;
                                                         top: 50%;
