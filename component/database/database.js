@@ -6,8 +6,9 @@ databaseRouter.get('/', (req, res) => {
     res.set('Cache-Control', 'no-store, must-revalidate');
 
     if (req.session.user) {
-        pool.query('SELECT * FROM table_oss WHERE compliance_check = \'Compliance\'', (err, result) => {
-        // pool.query('SELECT * FROM table_oss', (err, result) => {            
+        pool.query('SELECT * FROM images WHERE process_status = \'Yes\'', (err, result) => {
+        // pool.query('SELECT * FROM table_oss', (err, result) => {
+            
             if (!err) {
                 res.render('database', { data: result.rows }); 
             } else {

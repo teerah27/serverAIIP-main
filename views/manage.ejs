@@ -1,4 +1,4 @@
-<!DOCTYPE ejs>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
@@ -40,7 +40,6 @@
                 <span class="sidenav-label">Logout</span>
             </a>
         </div>
-
     </div>
 
     <div class="manage-container">
@@ -83,6 +82,25 @@
             </form>
         </div>
     </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Brand Name</th>
+                <th>Product Name</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% data.forEach(item => { %>
+                <tr>
+                    <td><%= item.brand_name %></td>
+                    <td><%= item.product_name %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>
         <button id="confirmLogout">Yes</button>
@@ -94,12 +112,11 @@
     <div id="product-popup" class="popup" style="display: none;">
         <p>Product successfully added!</p>
     </div>
-    </body>
+
     <script src="script/sidenav.js"></script>
     <script src="script/manageProd.js"></script>
     <script src="script/addpop.js"></script>
     <script src="script/backbt.js"></script>
     <script src="script/logout.js"></script>
-
 </body>
 </html>
