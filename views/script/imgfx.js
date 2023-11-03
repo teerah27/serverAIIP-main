@@ -283,5 +283,5 @@ function showImage(imagePath) {
 
     if (urlParams.has('process') && urlParams.get('process') === 'true') {
         showProcessPopup();
-    }
-});"
+    }
+});
