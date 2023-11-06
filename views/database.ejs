@@ -10,7 +10,7 @@
 <body>
     <div class="container2">
         <header class="header">
-            <img src="logo.png" alt="Logo" height="100px">
+            <img src="ezgif.com-crop.gif" alt="Logo" height="100px">            
             <h2>DATABASE</h2>
         </header>
 
@@ -48,6 +48,13 @@
     </div>
 
     <div class="table-container2" id="table-container2">
+        
+        <% if (data.length === 0) { %>
+            <div class="tenor-gif-embed" data-postid="23002426" data-share-method="host" data-aspect-ratio="1.67539" data-width="100%"><a href="https://tenor.com/view/cat-cats-gif-23002426">Cat Cats GIF</a>from <a href="https://tenor.com/search/cat-gifs">Cat GIFs</a>
+            </div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <p>No data of processed image.</p>
+        <% } else { %>
         <table id="region" class="table" style="width:90%">
             <thead>
                 <tr>
@@ -73,6 +80,7 @@
                     </tr>
                 <% }); %>
             </tbody>
+            <% } %>
         </table>
     </div>
     <div id="logoutConfirmation" class="logoutpopup">

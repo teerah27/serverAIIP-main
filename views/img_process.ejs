@@ -10,7 +10,7 @@
 <body>
     <div class="container3">
         <header class="header">
-            <img src="logo.png" alt="Logo" height="100px">
+            <img src="ezgif.com-crop.gif" alt="Logo" height="100px">
             <h2>PROCESS</h2>
         </header>
 
@@ -49,7 +49,7 @@
     <div class="table-container3" id="table-container3">
         <div class="reg-container">
             <audio id="sound" src="success.mp3" preload="auto"></audio>
-            <button type="submit" class="css-button">
+            <button type="submit" class="css-img">
                 <a style="text-decoration: none; color: white;">
                     <span class="css-button-text">
                         <span>Process</span>
@@ -60,6 +60,12 @@
                 </a>
             </button>            
             </div><br><br>
+            <% if (data.length === 0) { %>
+                <div class="tenor-gif-embed" data-postid="13575875809847976836" data-share-method="host" data-aspect-ratio="1.01852"><a href="https://tenor.com/view/peach-goma-gif-13575875809847976836" >Peach Goma Sticker</a>
+                </div>
+                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                <p>No new image to be processed.</p>
+            <% } else { %>
             <table id="region" class="table" style="width:80%">
             <thead>
                 <tr>
@@ -83,6 +89,7 @@
                     </tr>
                 <% }); %>
             </tbody>
+            <% } %>
         </table>
     </div>
     <div id="logoutConfirmation" class="logoutpopup">
