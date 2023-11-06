@@ -46,13 +46,14 @@
         </div>
 
     </div>
-    <% if (data.length === 0) { %>
-        <p>No data of rejected image.</p>
-        <div class="tenor-gif-embed" data-postid="17876456" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/cute-kitty-cat-animated-dancing-gif-17876456">Cute Kitty GIF</a>from <a href="https://tenor.com/search/cute-gifs">Cute GIFs</a>
-        </div> 
-        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <% } else { %>
+
     <div class="table-container2" id="table-container2">
+        <% if (data.length === 0) { %>
+            <p>No data of rejected image.</p>
+            <div class="tenor-gif-embed" data-postid="17876456" data-share-method="host" data-aspect-ratio="1"><a href="https://tenor.com/view/cute-kitty-cat-animated-dancing-gif-17876456">Cute Kitty GIF</a>
+            </div> 
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <% } else { %>
         <table id="region" class="table" style="width:90%">
             <thead>
                 <tr>
