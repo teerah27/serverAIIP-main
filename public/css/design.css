@@ -312,7 +312,7 @@ select                                                  {text-align: justify;
 .manage-container                                       {display: flex;
                                                         flex-wrap: wrap;
                                                         justify-content: space-between;
-                                                        padding: 7% 7%;
+                                                        padding: 5% 4%;
                                                         transition: margin-left 0.3s;
                                                         align-items: center;
                                                         height: 100vh;}
@@ -340,6 +340,7 @@ select                                                  {text-align: justify;
                                                         border-radius: 10px;
                                                         margin-left: 3%;
                                                         margin-top: 3%;
+                                                        margin-right: 1%;
                                                         align-items: center;}
 .brand-container                                        {width: 190%;
                                                         background-color: #f0f0f0;
