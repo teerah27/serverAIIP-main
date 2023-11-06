@@ -46,6 +46,15 @@ button.css-add                                          {background-color: #0056
                                                         font-size: 100%;
                                                         cursor: pointer;
                                                         position: relative;}
+button.css-img                                          {background-color: #0056b3;
+                                                        color: #fff;
+                                                        width: 13%;
+                                                        padding: 1% 1%;
+                                                        border: none;
+                                                        border-radius: 25px;
+                                                        font-size: 100%;
+                                                        cursor: pointer;
+                                                        position: inherit;}
 button.css-outlet                                       {background-color: #0056b3;
                                                         color: #fff;
                                                         width: fit-content;
@@ -54,7 +63,7 @@ button.css-outlet                                       {background-color: #0056
                                                         border-radius: 25px;
                                                         font-size: 100%;
                                                         cursor: pointer;
-                                                        position: relative;}
+                                                        position: inherit;}
 button:hover                                            {background-color: #0056b3;}
 .sidenav                                                {height: 100%;
                                                         width: 5.5%; 
@@ -187,6 +196,13 @@ button:hover                                            {background-color: #0056
                                                         transition: margin-left 0.3s;
                                                         text-align: center;
                                                         margin-left: 150px;}
+.table-outlet                                           {vertical-align: middle;
+                                                        transition: margin-left 0.3s;
+                                                        text-align: center;
+                                                        margin-left: 10%;
+                                                        margin-top: 1%;}
+.table-outlet > :not(caption) > * > *                          {padding: 0.5rem 0.5rem;
+                                                        box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);} 
 .table > :not(caption) > * > *                          {padding: 0.5rem 0.5rem;
                                                         box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);}              
 th                                                      {background-color: #e5e9ec81;
@@ -307,8 +323,9 @@ select                                                  {text-align: justify;
                                                         transition: margin-left 0.3s;
                                                         align-items: center;
                                                         margin-left: 8%;
-                                                        height: 100vh;}
+                                                        height: 100%;}
 .outlet-container                                       {width: 100%;
+                                                        position:flex;
                                                         background-color: #f0f0f0;
                                                         padding-top: 2%;
                                                         margin-top: 2.6%;
@@ -348,13 +365,13 @@ select                                                  {text-align: justify;
                                                         margin: 5px;
                                                         width: 26%; 
                                                         box-sizing: border-box;
-                                                        position: relative;
+                                                        position: inherit;
                                                         text-align: center;}
 .input-container-outlet                                 {display: flex;
                                                         padding-top: 0%;
                                                         margin-left: 1%;
                                                         width: 160%;
-                                                        position: relative;
+                                                        position: inherit;
                                                         align-items: center;}
 .input-container                                        {display: flex;
                                                         position: relative;
@@ -378,23 +395,35 @@ select                                                  {text-align: justify;
                                                         left: 50%;
                                                         transform: translate(-50%, -50%);
                                                         background-color: white;
-                                                        padding: 20px;
+                                                        width: 20%;
+                                                        padding: 2% 2%;
                                                         border: 1px solid #ccc;
                                                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                                                         z-index: 1000;
                                                         text-align: center;}
-#confirmProcess, #cancelProcess                         {margin: 10px;
-                                                        padding: 10px 20px;
+#confirmProcess                                         {margin: 2%;
+                                                        padding: 4% 11%;
+                                                        width: 20%;
                                                         border: none;
-                                                        background-color: #0074D9;
+                                                        background-color: #0056b3;
                                                         color: white;
                                                         cursor: pointer;
                                                         width: fit-content;
                                                         font-size: 16px;}
-.button-container-outlet                                {height: 10%;
-                                                        margin-left: 1%;
+#cancelProcess                                         {margin-left: 5%;
+                                                        padding: 3.8% 16.5%;
+                                                        width: 30%;
+                                                        border: none;
+                                                        background-color: #0056b3;
+                                                        color: white;
+                                                        cursor: pointer;
+                                                        width: fit-content;
+                                                        font-size: 16px;}
+.button-container-outlet                                {margin-left: 1%;
+                                                        display: flex;
+                                                        position: inherit;
                                                         width: 11%;}
-.modal                                                  {display: none;
+.modal-outlet                                           {display: none;
                                                         position: fixed;
                                                         height: 18%;
                                                         width: 20%;
@@ -406,7 +435,13 @@ select                                                  {text-align: justify;
                                                         padding: 1% 2%;
                                                         box-shadow: 0 0 10px #0056b3;
                                                         z-index: 3;}
-.modal-content button                                   {height: 30%;
+.modal-outlet-content button                            {height: 30%;
+                                                        margin-top: 7%;
                                                         margin-left: 4%;
                                                         margin-right: 5%;
                                                         width: 40%}
+.delete-outlet-btn                                      {width: 50%;
+                                                        position: inherit;}
+.outlet-container-table                                 {width: 99.8%;
+                                                        margin-right: 9.4%;
+                                                        margin-top: 15%;}

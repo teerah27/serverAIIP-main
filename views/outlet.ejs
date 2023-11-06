@@ -61,13 +61,13 @@
                         </span>
                     </button>
                 </div>
-    
+            </div>
             </div>
 
         </form>  
-        </div>    
+         
         <div style="clear:both;"></div>
-        <table id="region " style="width: 100%" class="table">
+        <table id="region " style="width: 100%;" class="table-outlet">
             <thead>
                 <tr>
                     <th>No</th>
@@ -83,17 +83,17 @@
                         <td><%= record.outlet_name %></td>
                         <td><%= record.outlet_location %></td>
                         <td>
-                            <button class="delete-outlet-btn" data-outlet-id="<%= record.id %>" data-outlet-name="<%= record.outlet_name %>" style="width: 50%;">Delete</button>
+                            <button class="delete-outlet-btn" data-outlet-id="<%= record.id %>" data-outlet-name="<%= record.outlet_name %>">Delete</button>
                         </td>
                     </tr>
                 <% }); %>
             </tbody>
             
         </table>
-    </div> 
+       </div>    
     </div>
-    <div id="confirm-delete" class="modal">
-        <div class="modal-content">
+    <div id="confirm-delete" class="modal-outlet">
+        <div class="modal-outlet-content">
             <p id="delete-confirmation-text"></p>
             <button id="confirmDelete">Yes</button>
             <button id="cancelDelete">No</button>

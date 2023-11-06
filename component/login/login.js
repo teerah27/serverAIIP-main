@@ -12,7 +12,7 @@ loginRouter.post('/', async (req, res) => {
 
   // Retrieve the user's email from the database
   try {
-    const query = 'SELECT * FROM user_details WHERE email = $1';
+    const query = 'SELECT * FROM admins WHERE email = $1';
     const { rows } = await pool.query(query, [email]);
 
     if (rows.length === 0) {
@@ -40,7 +40,7 @@ loginRouter.post('/', async (req, res) => {
       minute: '2-digit',
     }).format(new Date());
 
-    const updateLastLoginQuery = 'UPDATE user_details SET last_login = $1 WHERE email = $2';
+    const updateLastLoginQuery = 'UPDATE admins SET last_login = $1 WHERE email = $2';
     await pool.query(updateLastLoginQuery, [formattedTimestamp, email]);
     req.session.user = user;
     res.redirect('/dashboard');

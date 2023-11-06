@@ -11,7 +11,7 @@ registrationRouter.get('/', (req, res) => {
 registrationRouter.post('/form', async (req, res) => {
   const { first_name, last_name, age, address, email, password, passwordConfirm } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
-  const checkEmailQuery = 'SELECT email FROM user_details WHERE email = $1';
+  const checkEmailQuery = 'SELECT email FROM admins WHERE email = $1';
   const emailExists = await pool.query(checkEmailQuery, [email]);
 
   // Password strength requirements
@@ -39,7 +39,7 @@ registrationRouter.post('/form', async (req, res) => {
 
     try {
       const insertQuery = `
-        INSERT INTO user_details (id, first_name, last_name, age, address, email, password, first_register)
+        INSERT INTO admins (id, first_name, last_name, age, address, email, password, first_register)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
       `;
       const values = [userId, first_name, last_name, age, address, email, hashedPassword, formattedTimestamp];
