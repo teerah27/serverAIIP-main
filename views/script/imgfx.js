@@ -115,10 +115,11 @@ function showImage(imagePath) {
       });
     });
 
-    const processButton = document.querySelector(".css-button a");
+    const processButton = document.getElementById("processButton");
     const processConfirmation = document.getElementById("processConfirmation");
     const confirmProcessButton = document.getElementById("confirmProcess");
     const cancelProcessButton = document.getElementById("cancelProcess");
+    const loggedInName = reques.session.userEmail;
 
     processButton.addEventListener("click", (event) => {
         event.preventDefault();
@@ -127,7 +128,7 @@ function showImage(imagePath) {
 
     confirmProcessButton.addEventListener("click", () => {
         // Redirect the user to "http://47.250.10.195:8888/"
-        window.location.href = "http://47.250.10.195:8888/";
+        window.location.href = "http://47.250.10.195:8888?email="+loggedInName;
     });
     
     cancelProcessButton.addEventListener("click", () => {

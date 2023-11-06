@@ -141,7 +141,8 @@ button:hover                                            {background-color: #0056
                                                         width: 100%;
                                                         display: flex;}
 .table-container3                                       {margin-top: 10%;
-                                                        margin-left: 8.65%;
+                                                        padding: 0.1% 0.5%;
+                                                        margin-left: 8%;
                                                         transition: margin-left 0.3s;}
 .icon-container2 i                                      {font-size: 40px;
                                                         color: #ffffff;}
