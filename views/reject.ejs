@@ -48,34 +48,29 @@
     </div>
 
     <div class="table-container2" id="table-container2">
-        <% if (data.length === 0) { %>
-            <p>No data of rejected image.</p>
-            <div class="tenor-gif-embed" data-postid="17876456" data-share-method="host" data-aspect-ratio="1"><a href="https://tenor.com/view/cute-kitty-cat-animated-dancing-gif-17876456">Cute Kitty GIF</a>
-            </div> 
-            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        <% } else { %>
         <table id="region" class="table" style="width:90%">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Van Name</th>
+                    <th>Van ID</th>
                     <th>Outlet</th>
                     <th>Original Image</th>
-                    <th>Reason</th>
+                    <th>Annotated Image</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <% data.forEach((record, index) => { %>
                     <tr>
                         <td></td>
-                        <td><%= record.first_name %> <%= record.last_name %></td>
-                        <td><%= record.outlet_name %></td>
+                        <td><%= record.van_user_id %></td>
+                        <td><%= record.outlet_id %></td>
                         <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
-                        <td><%= record.reason %></td>
+                        <td><a href="<%= record.annotated_path %>" class="image-link green" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.annotated_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
+                        <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
                     </tr>
                 <% }); %>
             </tbody>
-            <% } %>
         </table>
     </div>
     <div id="logoutConfirmation" class="logoutpopup">

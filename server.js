@@ -31,6 +31,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(express.static('public/css'));
 app.use(express.static('public/img'));
+app.use(express.static('public/audio'));
 app.use(express.static('views'));
 
 //for Flutter usage

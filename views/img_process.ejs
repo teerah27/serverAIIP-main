@@ -48,7 +48,8 @@
     </div>
     <div class="table-container3" id="table-container3">
         <div class="reg-container">
-            <button type="submit" class="css-img" id="processButton">
+            <audio id="sound" src="success.mp3" preload="auto"></audio>
+            <button type="submit" class="css-button">
                 <a style="text-decoration: none; color: white;">
                     <span class="css-button-text">
                         <span>Process</span>
@@ -59,17 +60,11 @@
                 </a>
             </button>            
             </div><br><br>
-            <% if (data.length === 0) { %>
-                <p>No new image to be processed.</p>
-                <div class="tenor-gif-embed" data-postid="13575875809847976836" data-share-method="host" data-aspect-ratio="1.01852">
-                    <a href="https://tenor.com/view/peach-goma-gif-13575875809847976836" style="pointer-events: none;">Peach Goma Sticker</a>
-                </div>
-                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-            <% } else { %>
             <table id="region" class="table" style="width:80%">
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Created at</th>
                     <th>Van ID</th>
                     <th>Outlet</th>
                     <th>Original Image</th>
@@ -80,6 +75,7 @@
                 <% data.forEach((record, index) => { %>
                     <tr data-id="<%= record.id %>">
                         <td></td>
+                        <td><%= record.created_at %></td>
                         <td><%= record.first_name %> <%= record.last_name %></td>
                         <td><%= record.outlet_name %></td>
                         <td><a href="<%= record.image_path %>" class="image-link"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></td>
@@ -87,7 +83,6 @@
                     </tr>
                 <% }); %>
             </tbody>
-            <% } %>
         </table>
     </div>
     <div id="logoutConfirmation" class="logoutpopup">
