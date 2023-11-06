@@ -448,5 +448,6 @@ select                                                  {text-align: justify;
                                                         margin-top: 15%;}
 .tenor-gif-embed                                        {height: 20%;
                                                         width: 20%;
+                                                        pointer-events: none;
                                                         margin-left: 40%;
                                                         margin-top: 10%}
