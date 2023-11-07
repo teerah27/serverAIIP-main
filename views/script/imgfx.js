@@ -115,7 +115,7 @@ function showImage(imagePath) {
       });
     });
 
-    const processButton = document.querySelector(".css-button a");
+    const processButton = document.querySelector(".css-img");
     const processConfirmation = document.getElementById("processConfirmation");
     const confirmProcessButton = document.getElementById("confirmProcess");
     const cancelProcessButton = document.getElementById("cancelProcess");
