@@ -447,9 +447,13 @@ select                                                  {text-align: justify;
 .outlet-container-table                                 {width: 99.8%;
                                                         margin-right: 9.4%;
                                                         margin-top: 15%;}
-.tenor-gif-embed                                        {align-items: center;
-                                                        height: 25%;
-                                                        width: 30%;
+.gif-database, .gif-reject                             {padding: 10% 0%;
+                                                        width: 20%;
+                                                        margin-left: 43%;
                                                         pointer-events: none;
-                                                        position: absolute;
-                                                        margin-top: 20%}
+                                                        position: relative;}
+.gif-img                                                {padding: 7% 0%;
+                                                        width: 15%;
+                                                        margin-left:-5%;
+                                                        pointer-events: none;
+                                                        position: relative;}

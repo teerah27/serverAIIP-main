@@ -48,6 +48,14 @@
     </div>
     <div class="table-container3" id="table-container3">
         <div class="reg-container">
+            <% if (data.length === 0) { %>
+                <div class="gif-img">
+                <div class="tenor-gif-embed" data-postid="13575875809847976836" data-share-method="host" data-aspect-ratio="1.01852" data-width="100%"><a href="https://tenor.com/view/peach-goma-gif-13575875809847976836">Peach Goma Sticker</a>
+                </div> 
+                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                <p>No new image to be processed.</p>
+            </div>
+            <% } else { %>
             <audio id="sound" src="success.mp3" preload="auto"></audio>
             <button type="submit" class="css-img">
                 <a style="text-decoration: none; color: white;">
@@ -60,12 +68,6 @@
                 </a>
             </button>            
             </div><br><br>
-            <% if (data.length === 0) { %>
-                <div class="tenor-gif-embed" data-postid="13575875809847976836" data-share-method="host" data-aspect-ratio="1.01852"><a href="https://tenor.com/view/peach-goma-gif-13575875809847976836" >Peach Goma Sticker</a>
-                </div>
-                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-                <p>No new image to be processed.</p>
-            <% } else { %>
             <table id="region" class="table" style="width:80%">
             <thead>
                 <tr>

@@ -49,31 +49,33 @@
 
     <div class="table-container2" id="table-container2">
         <% if (data.length === 0) { %>
+            <div class="gif-reject" style="margin-top: 10%;">
             <div class="tenor-gif-embed" data-postid="21094508" data-share-method="host" data-aspect-ratio="1.29555" data-width="100%"><a href="https://tenor.com/view/peachcry-peachmad-typing-homework-homeworktime-gif-21094508">Peachcry Peachmad GIF</a>
             </div> 
             <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <p>No data of rejected image.</p>
+        </div>
         <% } else { %>
         <table id="region" class="table" style="width:90%">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Van ID</th>
+                    <th>Reject Date</th>
+                    <th>Van Name</th>
                     <th>Outlet</th>
                     <th>Original Image</th>
-                    <th>Annotated Image</th>
-                    <th>Status</th>
+                    <th>Reason</th>
                 </tr>
             </thead>
             <tbody>
                 <% data.forEach((record, index) => { %>
                     <tr>
                         <td></td>
-                        <td><%= record.van_user_id %></td>
-                        <td><%= record.outlet_id %></td>
+                        <td><%= record.reject_date %></td>
+                        <td><%= record.first_name %> <%= record.last_name %></td>
+                        <td><%= record.outlet_name %></td>
                         <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
-                        <td><a href="<%= record.annotated_path %>" class="image-link green" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.annotated_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
-                        <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
+                        <td><%= record.reason %></td>
                     </tr>
                 <% }); %>
             </tbody>
