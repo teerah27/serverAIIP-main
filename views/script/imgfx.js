@@ -118,6 +118,7 @@ function showImage(imagePath) {
     const processButton = document.querySelector(".css-img");
     const processConfirmation = document.getElementById("processConfirmation");
     const confirmProcessButton = document.getElementById("confirmProcess");
+    const loadingPopup = document.getElementById("loadingPopup");
     const cancelProcessButton = document.getElementById("cancelProcess");
 
     processButton.addEventListener("click", (event) => {
@@ -126,10 +127,11 @@ function showImage(imagePath) {
     });
 
     confirmProcessButton.addEventListener("click", () => {
-        // Redirect the user to "http://47.250.10.195:8888/"
+        loadingPopup.style.display = "block";
         window.location.href = "http://47.250.10.195:8888/";
         const sound = document.getElementById("sound");
         sound.play();
+        updateDatabase();
     });
     
     cancelProcessButton.addEventListener("click", () => {
@@ -149,5 +151,5 @@ function showImage(imagePath) {
 
     if (urlParams.has('process') && urlParams.get('process') === 'true') {
         showProcessPopup();
-}
+    }
 });

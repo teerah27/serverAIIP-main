@@ -457,3 +457,25 @@ select                                                  {text-align: justify;
                                                         margin-left:-5%;
                                                         pointer-events: none;
                                                         position: relative;}
+/* Add this CSS to your design.css file or in a <style> tag in the HTML */
+.loading-popup {
+    display: none; /* Initially hide the loading popup */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    z-index: 9999;
+}
+
+.loading-popup .tenor-gif-embed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10000;
+}
