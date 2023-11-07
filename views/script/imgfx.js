@@ -127,12 +127,20 @@ function showImage(imagePath) {
     });
 
     confirmProcessButton.addEventListener("click", () => {
+        processConfirmation.style.display = "none"; // Add this line to hide the confirmation
         loadingPopup.style.display = "block";
-        window.location.href = "http://47.250.10.195:8888/";
-        const sound = document.getElementById("sound");
-        sound.play();
-        updateDatabase();
+        // simulate a server request with a timeout
+        setTimeout(() => {
+            window.location.href = "http://47.250.10.195:8888/";
+            const sound = document.getElementById("sound");
+            sound.play();
+            updateDatabase();
+            // After completing the process, hide the loadingPopup
+            loadingPopup.style.display = "none";
+            showProcessPopup(); // You should define this function if it isn't already
+        }, 500); // Adjust the timeout as needed for your process time
     });
+    
     
     cancelProcessButton.addEventListener("click", () => {
         processConfirmation.style.display = "none";
