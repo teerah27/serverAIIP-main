@@ -46,31 +46,34 @@ button                                                  {background-color: #2837
                                                         position: relative;}
 button.css-add                                          {background-color: #283791;
                                                         color: #fff;
-                                                        width: fit-content;
-                                                        padding: 3% 15%;
+                                                        width: 33%;
+                                                        padding: 2.6% 1%;
                                                         border: none;
                                                         border-radius: 25px;
-                                                        font-size: 100%;
+                                                        font-weight: bold;
+                                                        font-size: 120%;
                                                         cursor: pointer;
-                                                        position: relative;}
+                                                        position: inherit;}
 button.css-img                                          {background-color: #283791;
                                                         color: #fff;
                                                         width: 13%;
                                                         padding: 1% 1%;
                                                         border: none;
                                                         border-radius: 25px;
-                                                        font-size: 100%;
+                                                        font-weight: bold;
+                                                        font-size: 120%;
                                                         cursor: pointer;
                                                         position: inherit;}
 button.css-outlet                                       {background-color: #283791;
-                                                        color: #fff;
-                                                        width: fit-content;
-                                                        padding: 3% 15%;
-                                                        border: none;
-                                                        border-radius: 25px;
-                                                        font-size: 100%;
-                                                        cursor: pointer;
-                                                        position: inherit;}
+    color: #fff;
+    width: 83.5%;
+    padding: 6.5% 1%;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 120%;
+    cursor: pointer;
+    position: inherit;}
 button:hover                                            {background-color: #283791;}
 .sidenav {
     height: 100%;
@@ -228,7 +231,7 @@ button:hover                                            {background-color: #2837
                                                             transition: margin 0.3s;
                                                             border-collapse: collapse;
                                                             width: 90%;
-                                                            margin: 1% 1% 1% auto; /* Adjust as needed */
+                                                            margin: 0% 1% 0% auto; /* Adjust as needed */
                                                         }
 
                                                         
@@ -443,8 +446,11 @@ select                                                  {text-align: justify;
                                                         position: relative;
                                                         text-align: center;}
 .input-control-outlet                                   {border: 1px solid #ccc;
+                                                        display: flex;
                                                         background-color: rgb(255, 242, 185);
                                                         border-radius: 15px;
+                                                        padding-top: 0%;
+                                                        align-items: center;
                                                         padding: 10px;
                                                         margin: 5px;
                                                         width: 26%; 
@@ -453,8 +459,12 @@ select                                                  {text-align: justify;
                                                         text-align: center;}
 .input-container-outlet                                 {display: flex;
                                                         padding-top: 0%;
+                                                        text-align: center;
                                                         margin-left: 1%;
-                                                        width: 160%;
+                                                        box-sizing: border-box;
+                                                        padding: 10px;
+                                                        margin: 5px;
+                                                        width: 155%;
                                                         position: inherit;
                                                         align-items: center;}
 .input-container                                        {display: flex;
