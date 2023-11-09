@@ -694,3 +694,80 @@ select                                                  {text-align: justify;
                                                                 opacity: 0;
                                                             }
                                                         }
+                                                        .fa-gear:hover {
+                                                            animation: spin 2s infinite linear; /* Adjust the duration and other parameters as needed */
+                                                        }
+                                                        
+                                                        @keyframes spin {
+                                                            from {
+                                                                transform: rotate(0deg);
+                                                            }
+                                                            to {
+                                                                transform: rotate(360deg);
+                                                            }
+                                                        }
+                                                        .fa-bar-chart:hover {
+                                                            animation: beat 0.5s infinite linear; /* Adjust the duration and other parameters as needed */                                                        }
+                                                        
+                                                        @keyframes beat {
+                                                            from {
+                                                                transform: scale(1);
+                                                            }
+                                                            to {
+                                                                transform: scale(1.2);
+                                                            }
+                                                        }
+                                                        .fa-square-check:hover {
+                                                            animation: beat 0.5s infinite linear; /* Adjust the duration and other parameters as needed */                                                        }
+                                                        
+                                                        @keyframes beat {
+                                                            from {
+                                                                transform: scale(1);
+                                                            }
+                                                            to {
+                                                                transform: scale(1.2);
+                                                            }
+                                                        }
+                                                        .fa-ban:hover {
+                                                            animation: beat 0.5s infinite linear; /* Adjust the duration and other parameters as needed */                                                        }
+                                                        
+                                                        @keyframes beat {
+                                                            from {
+                                                                transform: scale(1);
+                                                            }
+                                                            to {
+                                                                transform: scale(1.2);
+                                                            }
+                                                        }
+                                                        .fa-shopping-cart:hover {
+                                                            animation: beat 0.5s infinite linear; /* Adjust the duration and other parameters as needed */                                                        }
+                                                        
+                                                        @keyframes beat {
+                                                            from {
+                                                                transform: scale(1);
+                                                            }
+                                                            to {
+                                                                transform: scale(1.2);
+                                                            }
+                                                        }
+                                                        .fa-store:hover {
+                                                            animation: beat 0.5s infinite linear; /* Adjust the duration and other parameters as needed */                                                        }
+                                                        @keyframes beat {
+                                                            from {
+                                                                transform: scale(1);
+                                                            }
+                                                            to {
+                                                                transform: scale(1.2);
+                                                            }
+                                                        }
+                                                        .fa-sign-out:hover {
+                                                            animation: beat 0.5s infinite linear; /* Adjust the duration and other parameters as needed */
+                                                        }
+                                                        @keyframes beat {
+                                                            from {
+                                                                transform: scale(1);
+                                                            }
+                                                            to {
+                                                                transform: scale(1.2);
+                                                            }
+                                                        }
