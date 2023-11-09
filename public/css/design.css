@@ -253,19 +253,21 @@ button:hover                                            {background-color: #2837
                                                         
                                                         th {
                                                             background-color: #283791;
-                                                            font-family: 'OpenSans', sans-serif;
+                                                            font-family: 'Gill Sans MT', sans-serif; /* Change the font-family */
                                                             text-align: inherit;
                                                             height: 50px;
-                                                            font-size: 1.5rem;
+                                                            font-size: 120%;
                                                             color: white;
-                                                            border-bottom: 2px solid #dee2e6; /* Add a solid line under the header */
-                                                        }
+                                                            border-bottom: 2px solid #dee2e6;
+                                                        }                                                        
                                                         
                                                         tr:nth-child(even) {
+                                                            font-family: 'Roboto', sans-serif;
                                                             background-color: #f8f4e3; /* Lighter shade for even rows */
                                                         }
                                                         
                                                         tr:nth-child(odd) {
+                                                            font-family: 'Roboto', sans-serif;
                                                             background-color: #e1eef9;
                                                         }
                                                         
