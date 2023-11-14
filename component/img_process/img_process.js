@@ -6,9 +6,9 @@ imgprocessRouter.get('/', (req, res) => {
     res.set('Cache-Control', 'no-store, must-revalidate');
 
     if (req.session.user) {
-        pool.query('SELECT i.*, v.*, o.* FROM images i JOIN van_users v ON i.van_user_id = v.id JOIN outlets o ON i.outlet_id = o.id WHERE process_status = \'No\'', (err, result) => {
+        pool.query('SELECT i.created_at AS image_created_at, v.*, o.*, i.image_path FROM images i JOIN van_users v ON i.van_user_id = v.id JOIN outlets o ON i.outlet_id = o.id WHERE i.process_status = \'No\' ORDER BY i.created_at DESC;', (err, result) => {
             if (!err) {
-                res.render('img_process', { data: result.rows });
+                res.render('img_process', { data: result.rows, user: req.session.user  });
             } else {
                 console.error('Error executing SQL query:', err);
                 console.error(err.stack);
@@ -17,6 +17,15 @@ imgprocessRouter.get('/', (req, res) => {
         });
     } else {
         res.redirect('/login');
+    }
+});
+
+// Add this new endpoint to fetch the user's email
+imgprocessRouter.get('/get-user-email', (req, res) => {
+    if (req.session.user) {
+        res.json({ email: req.session.userEmail });
+    } else {
+        res.status(401).json({ error: 'Unauthorized' });
     }
 });
 
@@ -37,7 +46,7 @@ imgprocessRouter.post('/update', (req, res) => {
         [formattedTimestamp, email, formattedTimestamp, formattedTimestamp, 'No'],
         (err, result) => {
             if (!err) {
-                console.log('Database updated successfully');                
+                console.log('Database updated successfully');
                 res.redirect('http://47.250.10.195:8888?email=' + email);
                 if (!err) {
                     console.log('Redirecting to http://47.250.10.195:8888?email=' + email);
@@ -54,7 +63,5 @@ imgprocessRouter.post('/update', (req, res) => {
         res.status(401).json({ error: 'Unauthorized' });
     }
 });
-
-
 
 module.exports = imgprocessRouter;

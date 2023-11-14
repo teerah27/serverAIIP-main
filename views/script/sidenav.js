@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setManageContainerSize("collapsed");
     });
 
-    setIframeSize(iframe.style.height = "780px");
+    setIframeSize(iframe.style.height = "743px");
 
     function setIframeSize() {
         if (sidenav.classList.contains("expanded")) {

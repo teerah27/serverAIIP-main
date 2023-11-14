@@ -16,32 +16,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setTableSize(state) {
         if (state === "expanded") {
-            table.style.marginLeft = "10%"; 
+            table.style.marginLeft = "-4%";
         } else {
-            table.style.marginLeft = originalMarginLeft; 
+            table.style.marginLeft = originalMarginLeft;
         }
     }
+
     let sidenavLinks = document.querySelectorAll('.sidenav a');
 
-    sidenavLinks.forEach(function(link) {
+    sidenavLinks.forEach(function (link) {
         if (link.href === window.location.href) {
             link.classList.add('active');
         }
     });
-    
+
     function showRows(database) {
         var rows = document.querySelectorAll("#database tr");
-        var count = 1; 
+        var count = 1;
 
         for (var i = 0; i < rows.length; i++) {
             var row = rows[i];
 
             if (row.id === "header") {
                 row.style.display = "table-row";
-                continue; 
+                continue;
             }
 
-            row.style.display = "none"; 
+            row.style.display = "none";
 
             if (row.getAttribute("database") === database || database === "All") {
                 row.style.display = "table-row";
@@ -65,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const deleteButtons = document.querySelectorAll(".delete-record");
-    deleteButtons.forEach(function(button) {
-        button.addEventListener("click", function(event) {
+    deleteButtons.forEach(function (button) {
+        button.addEventListener("click", function (event) {
             event.preventDefault();
             updateDatabase();
         });
@@ -76,19 +77,18 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch('/img_process/update', {
             method: "POST",
         })
-        .then(response => {
-            if (response.ok) {
-                res.redirect('/img_process/update');
-            } else {
-                console.error("Error updating the database");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/img_process/update';
+                } else {
+                    console.error("Error updating the database");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
     }
 });
-
 
 function showImage(imagePath) {
     var modal = document.getElementById("imageModal");
@@ -116,48 +116,57 @@ function showImage(imagePath) {
     });
 
     const processButton = document.querySelector(".css-img");
-    const processConfirmation = document.getElementById("processConfirmation");
-    const confirmProcessButton = document.getElementById("confirmProcess");
-    const loadingPopup = document.getElementById("loadingPopup");
-    const cancelProcessButton = document.getElementById("cancelProcess");
 
     processButton.addEventListener("click", (event) => {
         event.preventDefault();
-        processConfirmation.style.display = "block";
-    });
 
-    confirmProcessButton.addEventListener("click", () => {
-        processConfirmation.style.display = "none"; // Add this line to hide the confirmation
-        loadingPopup.style.display = "block";
-        // simulate a server request with a timeout
-        setTimeout(() => {
-            window.location.href = "http://47.250.10.195:8888/";
-            const sound = document.getElementById("sound");
-            sound.play();
-            updateDatabase();
-            // After completing the process, hide the loadingPopup
-            loadingPopup.style.display = "none";
-            showProcessPopup(); // You should define this function if it isn't already
-        }, 500); // Adjust the timeout as needed for your process time
+        fetch('/img_process/get-user-email') 
+            .then(response => response.json())
+            .then(data => {
+                const sound = document.getElementById("sound");
+                sound.play();
+                const email = data.email;
+                window.location.href = 'http://47.250.10.195:8888?email=${email}';
+                updateDatabase(email);
+            })
+            .catch(error => {
+                console.error("Error fetching user email:", error);
+            });
     });
-    
-    
-    cancelProcessButton.addEventListener("click", () => {
-        processConfirmation.style.display = "none";
-    });
-
-    function showProcessPopup() {
-        const processPopup = document.getElementById('process-popup');
-        processPopup.style.display = 'block';
-
-        setTimeout(function() {
-            processPopup.style.display = 'none';
-        }, 3000);
-    }
 
     const urlParams = new URLSearchParams(window.location.search);
 
     if (urlParams.has('process') && urlParams.get('process') === 'true') {
         showProcessPopup();
+    }
+
+    function updateDatabase(email) {
+        fetch('/img_process/update', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email }),
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/img_process/update';
+                    showProcessPopup();
+                } else {
+                    console.error("Error updating the database");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    }
+
+    function showProcessPopup() {
+        const processPopup = document.getElementById('process-popup');
+        processPopup.style.display = 'block';
+
+        setTimeout(function () {
+            processPopup.style.display = 'none';
+        }, 3000);
     }
 });

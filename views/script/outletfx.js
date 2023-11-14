@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sidenav = document.getElementById("sidenav");
-    const table = document.getElementById("manage-container-outlet");
+    const manageContainer = document.getElementById("outlet-container");
     let originalMarginLeft;
 
     sidenav.addEventListener("mouseenter", function () {
-        originalMarginLeft = getComputedStyle(table).marginLeft;
+        originalMarginLeft = getComputedStyle(manageContainer).marginLeft;
         sidenav.classList.add("expanded");
-        setTableSize("expanded");
+        setManageContainerSize("expanded");
     });
 
     sidenav.addEventListener("mouseleave", function () {
         sidenav.classList.remove("expanded");
-        setTableSize("collapsed");
+        setManageContainerSize("collapsed");
     });
 
-    function setTableSize(state) {
+    function setManageContainerSize(state) {
         if (state === "expanded") {
-            table.style.marginLeft = "12%";
+            manageContainer.style.marginLeft = "13%";
         } else {
-            table.style.marginLeft = originalMarginLeft;
+            manageContainer.style.marginLeft = originalMarginLeft;
         }
     }
 

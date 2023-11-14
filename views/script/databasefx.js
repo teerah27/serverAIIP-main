@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sidenav = document.getElementById("sidenav");
-    const table = document.getElementById("region");
+    const table = document.getElementById("table-container2");
     let originalMarginLeft;
 
     sidenav.addEventListener("mouseenter", function () {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setTableSize(state) {
         if (state === "expanded") {
-            table.style.marginLeft = "10%"; 
+            table.style.marginLeft = "5%"; 
         } else {
             table.style.marginLeft = originalMarginLeft; 
         }
@@ -90,3 +90,18 @@ function showImage(imagePath) {
       });
     });
 });
+
+function showJsonPopup(jsonContent) {
+    var popup = document.getElementById('jsonPopup');
+    var jsonContentElement = document.getElementById('jsonContent');
+
+    const cleanedJsonData = jsonContent.replace(/[{}"]/g, '');
+    const formattedJsonData = cleanedJsonData.replace(/,/g, '\n');
+
+    jsonContentElement.textContent = formattedJsonData;
+    document.getElementById("jsonPopup").style.display = "block";
+}
+
+function closeJsonPopup() {
+    document.getElementById("jsonPopup").style.display = "none";
+}

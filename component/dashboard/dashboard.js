@@ -5,7 +5,8 @@ dashboardRouter.get('/', (req, res) => {
     res.set('Cache-Control', 'no-store, must-revalidate');
 
     if (req.session.user) {
-        res.render('dashboard');
+        // Assuming req.session.user contains user data
+        res.render('dashboard', { user: req.session.user });
     } else {
         res.redirect('/login'); 
     }

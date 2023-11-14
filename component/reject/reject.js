@@ -10,7 +10,7 @@ rejectRouter.get('/', (req, res) => {
         // pool.query('SELECT * FROM table_oss', (err, result) => {
             
             if (!err) {
-                res.render('reject', { data: result.rows }); 
+                res.render('reject', {  data: result.rows, user: req.session.user}); 
             } else {
                 console.error('Error fetching user details:', err);
                 res.status(500).json({ error: 'Internal Server Error' });

@@ -31,7 +31,7 @@ manageRouter.get('/', async (req, res) => {
                         return;
                     }
                     const productData = productResult.rows;
-                    res.render('manage', { brandData: brandData, data: productData });
+                    res.render('manage', { brandData: brandData, data: productData, user: req.session.user });
                 });
             });
             

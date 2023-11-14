@@ -10,7 +10,7 @@ outletRouter.get('/', (req, res) => {
     if (req.session.user) {
         pool.query('SELECT * FROM outlets ', (err, result) => {
             if (!err) {
-                res.render('outlet', { data: result.rows });
+                res.render('outlet', { data: result.rows, user: req.session.user });
             } else {
                 console.error('Error executing SQL query:', err);
                 console.error(err.stack);

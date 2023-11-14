@@ -1,19 +1,27 @@
-<!DOCTYPE ejs>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="icon" type="image/png" href="logo.png">
-    <title>Outlets Listing</title>
+    <title>Outlet Listing</title>
 </head>
 <body>
-    <div class="container2">
-        <header class="header">
+    <div class="container">
+        <header class="header-outlet">
             <img src="logo.png" alt="Logo" height="100px">
-            <h2>OUTLETS LISTING</h2>
+            <h2>OUTLET LISTING</h2>
+            <% if (user) { %>
+                <div class="user-info-outlet">
+                    <div class="user-details">
+                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                        <div class="user-names">
+                            <span class="user-label"><%= user.email %> <%= user.first_name %> <%= user.last_name %></span>
+                </div>
+            <% } %>
         </header>
 
-        <div class="sidenav" id="sidenav">
+    <div class="sidenav" id="sidenav">
             <a href="/dashboard">
                 <i class="fa fa-bar-chart" aria-hidden="true"></i>
                 <span class="sidenav-label">Dashboard</span>
@@ -45,8 +53,9 @@
         </div>
 
     </div>
+    
 
-    <div class="manage-container-outlet" id="manage-container-outlet">
+    <div class="manage-container" id="manage-container">
         <div class="outlet-container">
         <div class="section-title">MANAGE OUTLET</div>
         <form action="/outlet/addOutlet" method="post">  
@@ -65,7 +74,7 @@
 
         </form>  
          
-        <div style="clear:both;"></div>
+
         <table id="region " style="width: 100%;" class="table-outlet">
             <thead>
                 <tr>
@@ -110,6 +119,8 @@
     <script src="script/outletfx.js"></script>
     <script src="script/addpop.js"></script>
     <script src="script/backbt.js"></script>
+    
+    <script src="script/manageProd.js"></script>
     <script src="script/logout.js"></script>
     
 </body>
