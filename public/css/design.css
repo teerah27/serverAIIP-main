@@ -17,8 +17,8 @@ h1                                                      {text-align: center;
 h2 {
                                                             font-size: 250%; /* Increase the size as needed */
                                                             text-align: center;
-                                                            margin-right: 40%;
-                                                            margin-left: 40%;
+                                                            margin-right: 0%;
+                                                            margin-left: 0%;
                                                             padding-top: 0%; /* Adjust as needed */
                                                             font-family: 'Gill Sans MT', sans-serif;
                                                         }
@@ -136,40 +136,11 @@ button:hover                                            {background-color: #2837
 .sidenav.expanded + .content                            {margin-left: 9.4%;
                                                         margin-right: 0%;}
 .header                                                 {position: fixed;
-                                                        width: 80.3%;
-                                                        height: 15.9%;
-                                                        padding-right: 4%;
-                                                        top: 0;
-                                                        left: 0;
-                                                        background: #FCCB06;
-                                                        display: flex;
-                                                        align-items: center;
-                                                        justify-content: space-between;}
-.header-result                                                 {position: fixed;
-                                                        width: 94%;
-                                                        height: 15.9%;
-                                                        padding-right: 2.1%;
-                                                        top: 0;
-                                                        left: 0;
-                                                        background: #FCCB06;
-                                                        display: flex;
-                                                        align-items: center;
-                                                        justify-content: space-between;}
-.header-img                                                 {position: fixed;
-                                                        width: 87.7%;
-                                                        z-index: 9999;
-                                                        height: 15.9%;
-                                                        padding-right: 2.7%;
-                                                        top: 0;
-                                                        left: 0;
-                                                        background: #FCCB06;
-                                                        display: flex;
-                                                        align-items: center;
-                                                        justify-content: space-between;}
-.header-outlet                                                 {position: fixed;
-                                                        width: 94.2%;
+                                                        width: 100%;
                                                         height: 16%;
+                                                        z-index: 3;
                                                         padding-right: 2%;
+                                                        padding-left: 2%;
                                                         top: 0;
                                                         left: 0;
                                                         background: #FCCB06;
@@ -346,7 +317,7 @@ select                                                  {text-align: justify;
                                                         font-size: 18px;
                                                         font-family: tahoma;
                                                         border: none;
-                                                        border-radius: 5px;}
+                                                        border-radius: 5px;}er
 .form__buttons                                          {text-align: center;
                                                         margin: 0 auto;
                                                         padding: 0% 0%;  }
@@ -414,7 +385,7 @@ select                                                  {text-align: justify;
                                                         margin-right: 0%;}
 .modal                                                  {display: none;
                                                         position: fixed;
-                                                        z-index: 1;
+                                                        z-index: 9999;
                                                         padding-top: 50px;
                                                         left: 0;
                                                         top: 0;
@@ -460,13 +431,10 @@ button.buttonJSON                                      {background-color: #0056b
                                                         text-align: center;
                                                         align-items: center;
                                                         margin-left: auto;
-                                                        margin-right: auto;}                                
-.image-link                                             {cursor: pointer;
-                                                        color: blue;
-                                                        text-decoration: underline;}
-.image-link:hover                                       {color: green;}
+                                                        margin-right: auto;}   
 .manage-container                                       {display: flex;
                                                         flex-wrap: wrap;
+                                                        z-index: 9999;
                                                         color: #000000;
                                                         justify-content: space-between;
                                                         padding: 2% 4%;
@@ -613,10 +581,13 @@ button.buttonJSON                                      {background-color: #0056b
                                                         margin-left: 43%;
                                                         pointer-events: none;
                                                         position: relative;}
-.gif-img                                                {padding: 7% 0%;
+.gif-img                                                {padding: 15% 0%;
                                                         width: 15%;
-                                                        margin-left:-5%;
-                                                        pointer-events: none;
+                                                        margin-left: 15%;
+                                                        position: relative;}
+.gif-img2                                               {padding: 15% 0%;
+                                                        width: 15%;
+                                                        margin-left: 45%;
                                                         position: relative;}
 .loading-popup                                          {display: none;
                                                         position: fixed;
@@ -869,41 +840,19 @@ button.buttonJSON                                      {background-color: #0056b
                                                             align-items: center; /* Vertically center the contents */
                                                         }
                                                         
-                                                        .fa-user {
-                                                            margin-right: 15%; /* Adjust margin as needed for spacing between icon and labels */
-                                                            color: #FCCB06; /* Change the icon color to the desired color */
-                                                        }
-                                                        
-                                                        .user-details {
-                                                            display: flex;
-                                                            align-items: center;
-                                                            margin-left: 10%;
-                                                            padding-left: 10%;
-                                                        }
-                                                        
-                                                        .user-names {
+                                                        .fa-user-circle { /* Adjust margin as needed for spacing between icon and labels */
+                                                            color: #283791; /* Change the icon color to the desired color */
                                                             display: flex;
                                                             flex-direction: column; /* Stack elements vertically */
+                                                            align-items: center;
                                                         }
+                                                        
+
                                                         
                                                         .user-label {
                                                             font-family: 'OpenSans', sans-serif;
+                                                            font-size: large;
                                                             font-weight: bold;
-                                                            color: #FCCB06; /* Change label text color to the desired color */
-                                                            margin-bottom: 5px; /* Add some spacing between labels if needed */
+                                                            color: #283791; /* Change label text color to the desired color */
+                                                            margin-top: 0%;
                                                         }
-                                                        .user-info1 {
-                                                            font-family: 'Roboto', sans-serif;
-                                                            background-color: #283791;
-                                                            width: 100%;
-                                                            padding: 3.55% 8.4% 3.6% 0%; /* Adjust padding as needed */
-                                                            display: absolute;
-                                                            margin-right: 10%}
-.user-info-img {
-                                                            font-family: 'Roboto', sans-serif;
-                                                            background-color: #283791;
-                                                            width: 100%;
-                                                            padding: 3.2% 5.7% 3.2% 0%; /* Adjust padding as needed */
-                                                            display: flex;
-                                                            margin-right: 10%}
-                                                            

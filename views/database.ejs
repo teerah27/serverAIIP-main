@@ -4,20 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="design.css">
     <link rel="icon" type="image/png" href="logo.png">
-    <title>RESULT REVIEW</title>
+    <title>Result Review</title>
 </head>
 <body>
     <div class="container3">
-        <header class="header-result">
+        <header class="header">
             <img src="logo.png" alt="Logo" height="100px">
             <h2>RESULT REVIEW</h2>
             <% if (user) { %>
-                <div class="user-info-result">
-                    <div class="user-details">
-                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                        <div class="user-names">
-                            <span class="user-label"><%= user.email %> <%= user.first_name %> <%= user.last_name %></span>
-          <% } %>
+                <span class="user-label"> 
+                    <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i><br>
+                    <%= user.first_name %> <%= user.last_name %>
+                </span>
+            <% } %>
         </div>
         </header>
 
@@ -56,10 +55,7 @@
     <div class="table-container2" id="table-container2">
         
         <% if (data.length === 0) { %>
-            <div class="gif-database" style="margin-top: 10%;">
-            <div class="tenor-gif-embed" data-postid="23002426" data-share-method="host" data-aspect-ratio="1.67539" data-width="100%"><a href="https://tenor.com/view/cat-cats-gif-23002426">Cat Cats GIF</a>
-                </div>  
-            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <div class="gif-img2">
             <p>No data of processed image.</p>
         </div>
         <% } else { %>
@@ -67,11 +63,11 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Processed at</th>
-                        <th>Staff</th>
-                        <th>Outlet</th>
                         <th>Original Image</th>
                         <th>Annotated Image</th>
+                        <th>Staff</th>
+                        <th>Outlet</th>
+                        <th>Processed at</th>
                         <th>Result</th>
                         <th>Status</th>
                     </tr>
@@ -80,11 +76,11 @@
                     <% data.forEach((record, index) => { %>
                         <tr>
                             <td></td>
-                            <td><%= record.process_date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) %></td>
-                            <td><%= record.first_name %> <%= record.last_name %></td>
-                            <td><%= record.outlet_name %></td>
                             <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
                             <td><a href="<%= record.annotated_path %>" class="image-link green" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.annotated_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
+                            <td><%= record.first_name %> <%= record.last_name %></td>
+                            <td><%= record.outlet_name %></td>
+                            <td><%= record.process_date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) %></td>
                             <td>
                                 <button type="button" class="buttonJSON" onclick="showJsonPopup('SOV Check\n\nMaggi: <%= record.annotated_json["SOV Maggi"] %>,Nestle: <%= record.annotated_json["SOV Nestle"] %>,Competitor: <%= record.annotated_json["SOV Competitor"] %>');">View SOV</button>
                                 <button type="button" class="buttonJSON" onclick="showJsonPopup('Compliance Check\n\nMaggi: <%= record.annotated_json["Compliance Maggi"] %>,Nestle: <%= record.annotated_json["Compliance Nestle"] %>,Eye Level Maggi: <%= record.annotated_json["Eye Level Maggi"] %>,Eye Level Nestle: <%= record.annotated_json["Eye Level Nestle"] %>');">View Compliance</button>

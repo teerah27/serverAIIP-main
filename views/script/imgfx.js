@@ -126,7 +126,7 @@ function showImage(imagePath) {
                 const sound = document.getElementById("sound");
                 sound.play();
                 const email = data.email;
-                window.location.href = 'http://47.250.10.195:8888?email=${email}';
+                window.location.href = `http://47.250.10.195:8888?email=${email}`;
                 updateDatabase(email);
             })
             .catch(error => {

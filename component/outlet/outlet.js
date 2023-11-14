@@ -8,7 +8,7 @@ outletRouter.get('/', (req, res) => {
     res.set('Cache-Control', 'no-store, must-revalidate');
 
     if (req.session.user) {
-        pool.query('SELECT * FROM outlets ', (err, result) => {
+        pool.query('SELECT * FROM outlets ORDER BY outlet_name', (err, result) => {
             if (!err) {
                 res.render('outlet', { data: result.rows, user: req.session.user });
             } else {

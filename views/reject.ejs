@@ -12,14 +12,12 @@
             <img src="logo.png" alt="Logo" height="100px">
             <h2>REJECTED IMAGES</h2>
             <% if (user) { %>
-                <div class="user-info">
-                    <div class="user-details">
-                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                        <div class="user-names">
-                            <span class="user-label"><%= user.email %> <%= user.first_name %> <%= user.last_name %></span>
-                </div>
+                <span class="user-label"> 
+                    <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i><br>
+                    <%= user.first_name %> <%= user.last_name %> </span>
             <% } %>
-       </header>
+        </div>
+        </header>
 
         <div class="sidenav" id="sidenav">
             <a href="/dashboard">
@@ -56,10 +54,7 @@
 
     <div class="table-container2" id="table-container2">
         <% if (data.length === 0) { %>
-            <div class="gif-reject" style="margin-top: 10%;">
-            <div class="tenor-gif-embed" data-postid="21094508" data-share-method="host" data-aspect-ratio="1.29555" data-width="100%"><a href="https://tenor.com/view/peachcry-peachmad-typing-homework-homeworktime-gif-21094508">Peachcry Peachmad GIF</a>
-            </div> 
-            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <div class="gif-img2">
             <p>No data of rejected image.</p>
         </div>
         <% } else { %>
@@ -67,10 +62,10 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Reject Date</th>
+                    <th>Original Image</th>
                     <th>Staff</th>
                     <th>Outlet</th>
-                    <th>Original Image</th>
+                    <th>Reject Date</th>
                     <th>Reason</th>
                 </tr>
             </thead>
@@ -78,10 +73,10 @@
                 <% data.forEach((record, index) => { %>
                     <tr>
                         <td></td>
-                        <td><%= record.reject_date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })%></td>
+                        <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
                         <td><%= record.first_name %> <%= record.last_name %></td>
                         <td><%= record.outlet_name %></td>
-                        <td><a href="<%= record.image_path %>" class="image-link" style="font-family: 'OpenSans', sans-serif;"><img src="<%= record.image_path %>" alt="Thumbnail" class="thumbnail" style="height:125px"></a></td>
+                        <td><%= record.reject_date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })%></td>
                         <td><%= record.reason %></td>
                     </tr>
                 <% }); %>

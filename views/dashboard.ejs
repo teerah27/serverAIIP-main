@@ -12,11 +12,10 @@
             <img src="logo.png" alt="Logo" height="100px">
             <h2>DASHBOARD</h2>
             <% if (user) { %>
-                <div class="user-info1">
-                    <div class="user-details">
-                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                        <div class="user-names">
-                            <span class="user-label"><%= user.email %> <%= user.first_name %> <%= user.last_name %></span>
+                <span class="user-label"> 
+                    <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i><br>
+                    <%= user.first_name %> <%= user.last_name %>
+                </span>
             <% } %>
         </div>
         </header>
