@@ -59,7 +59,7 @@
             </div>
             <% } else { %>
             <audio id="sound" src="success.mp3" preload="auto"></audio>
-            <button type="submit" class="css-img">
+            <button type="submit" id="confirmProcessButton" class="css-img">
                 <a style="text-decoration: none; color: white;">
                     <span class="css-button-text">
                         <span>Process</span>
@@ -95,6 +95,11 @@
             </tbody>
             <% } %>
         </table>
+    </div>
+    <div id="processConfirmation" class="processpopup">
+        <p>Are you sure you want to proceed?</p>
+        <button id="confirmProcess" class="delete-record">Continue</button>
+        <button id="cancelProcess">Abort</button>
     </div>
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>

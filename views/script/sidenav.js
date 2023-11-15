@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidenav = document.getElementById("sidenav");
     const content = document.getElementById("content");
     const iframe = document.getElementById("dashboard-iframe");
-    const manageContainer = document.querySelector(".manage-container");
 
     sidenav.addEventListener("mouseenter", function () {
         sidenav.classList.add("expanded");
@@ -22,19 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setIframeSize() {
         if (sidenav.classList.contains("expanded")) {
-            iframe.style.width = "101%";
+            iframe.style.width = "100%";
+            iframe.style.marginLeft = "0.8%"
         } else {
-            iframe.style.width = "101%";
+            iframe.style.width = "106%";
+            iframe.style.marginLeft = "0%"
+            iframe.style.animation = "0.8s";
         }
     }
     
-    function setManageContainerSize(state) {
-        if (state === "expanded") {
-            manageContainer.style.marginLeft = "10%"; 
-        } else {
-            manageContainer.style.marginLeft = originalMarginLeft;
-        }
-    }
     let sidenavLinks = document.querySelectorAll('.sidenav a');
 
     sidenavLinks.forEach(function(link) {

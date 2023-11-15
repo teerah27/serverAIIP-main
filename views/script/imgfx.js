@@ -93,26 +93,26 @@ document.addEventListener("DOMContentLoaded", function () {
 function showImage(imagePath) {
     var modal = document.getElementById("imageModal");
     var modalImage = document.getElementById("modalImage");
-  
+
     modalImage.src = imagePath;
-  
+
     modal.style.display = "block";
-  }
+}
   
-  function closeModal() {
+function closeModal() {
     var modal = document.getElementById("imageModal");
-  
+
     modal.style.display = "none";
-  }
+}
   
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     var imageLinks = document.querySelectorAll(".image-link");
     imageLinks.forEach(function(link) {
-      link.addEventListener("click", function(event) {
+        link.addEventListener("click", function(event) {
         event.preventDefault();
         var imagePath = link.getAttribute("href");
         showImage(imagePath);
-      });
+        });
     });
 
     const processButton = document.querySelector(".css-img");
@@ -120,7 +120,24 @@ function showImage(imagePath) {
     processButton.addEventListener("click", (event) => {
         event.preventDefault();
 
-        fetch('/img_process/get-user-email') 
+        const processConfirmationPopup = document.getElementById('processConfirmation');
+        processConfirmationPopup.style.display = 'block';
+
+        const confirmProcessButton = document.getElementById('confirmProcess');
+        const cancelProcessButton = document.getElementById('cancelProcess');
+
+        confirmProcessButton.addEventListener('click', () => {
+            processConfirmationPopup.style.display = 'none';
+            initiateProcessing();
+        });
+
+        cancelProcessButton.addEventListener('click', () => {
+            processConfirmationPopup.style.display = 'none';
+        });
+    });
+
+    function initiateProcessing() {
+        fetch('/img_process/get-user-email')
             .then(response => response.json())
             .then(data => {
                 const sound = document.getElementById("sound");
@@ -132,7 +149,7 @@ function showImage(imagePath) {
             .catch(error => {
                 console.error("Error fetching user email:", error);
             });
-    });
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -170,3 +187,5 @@ function showImage(imagePath) {
         }, 3000);
     }
 });
+
+// window.location.href = `http://47.250.10.195:8888?email=${email}`;
