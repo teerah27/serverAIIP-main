@@ -21,12 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setIframeSize() {
         if (sidenav.classList.contains("expanded")) {
-            iframe.style.width = "100%";
-            iframe.style.marginLeft = "0.8%"
-        } else {
-            iframe.style.width = "106%";
+            iframe.style.width = "101%";
             iframe.style.marginLeft = "0%"
-            iframe.style.animation = "0.8s";
+        } else {
+            iframe.style.width = "107.5%";
+            iframe.style.marginLeft = "-1%"
         }
     }
     

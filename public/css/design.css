@@ -105,7 +105,8 @@ button:hover                                            {background-color: #2837
 .sidenav.expanded a                                     {transition: background-color 0,6s, color 0.6s;}
 .content                                                {flex: 1;
                                                         width: 91%;
-                                                        margin-left: 4.4%;
+                                                        margin-left: 4.5%;
+                                                        margin-top: -0.5%;
                                                         transition: margin-left 0.235s;}
 .sidenav.expanded + .content                            {margin-left: 9.4%;
                                                         margin-right: 0%;}
