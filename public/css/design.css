@@ -363,6 +363,10 @@ select                                                  {text-align: justify;
                                                         justify-content: center;
                                                         align-items: center;
                                                         margin: 4% auto;}
+                                                        .red-button {
+                                                            background-color: red;
+                                                            /* Add any other styles you want for the red button */
+                                                        }                                                        
 .manage-container                                       {display: flex;
                                                         flex-wrap: wrap;
                                                         z-index: 555;

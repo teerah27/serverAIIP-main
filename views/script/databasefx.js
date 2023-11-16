@@ -29,34 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function showRows(database) {
-        var rows = document.querySelectorAll("#database tr");
-        var count = 1;
-
-        for (var i = 0; i < rows.length; i++) {
-            var row = rows[i];
-
-            if (row.id === "header") {
-                row.style.display = "table-row";
-                continue;
-            }
-
-            row.style.display = "none";
-
-            if (row.getAttribute("database") === database || database === "All") {
-                row.style.display = "table-row";
-
-                if (row.getAttribute("database") === database) {
-                    row.cells[0].textContent = count;
-                    count++;
-                } else if (database === "All") {
-                    row.cells[0].textContent = count;
-                    count++;
-                }
-            }
-        }
-    }
-
     const tableRows = document.querySelectorAll('tbody tr');
 
     tableRows.forEach((row, index) => {
@@ -103,5 +75,46 @@ function showJsonPopup(jsonContent) {
 }
 
 function closeJsonPopup() {
-    document.getElementById("jsonPopup").style.display = "none";
+    document.getElementById("jsonPopup").style.display = "none";
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var sovButtons = document.querySelectorAll('.sovButtonJSON');
+    var complianceButtons = document.querySelectorAll('.complianceButtonJSON');
+
+    // Handle SOV buttons
+    sovButtons.forEach(function (sovButton) {
+        var index = sovButton.getAttribute('id').split('_')[1];
+        var iconContainer = document.getElementById('sovIconContainer_' + index);
+
+        if (sovButton && iconContainer) {
+            var sovCompetitorValue = parseFloat(sovButton.getAttribute('data-competitor'));
+
+            if (sovCompetitorValue >= 50) {
+                sovButton.style.backgroundColor = 'red';
+                var icon = document.createElement('i');
+                icon.className = 'fa fa-exclamation-triangle';
+                icon.style.color = 'yellow';
+                iconContainer.appendChild(icon);
+            }
+        }
+    });
+
+    complianceButtons.forEach(function (complianceButton) {
+        var index = complianceButton.getAttribute('id').split('_')[1];
+        var iconContainer = document.getElementById('complianceIconContainer_' + index);
+    
+        if (complianceButton && iconContainer) {
+            var complianceMaggi = data[index].annotated_json["Compliance Maggi"];
+            var complianceNestle = data[index].annotated_json["Compliance Nestle"];
+    
+            if (complianceMaggi === 'Non-Compliance' || complianceNestle === 'Non-Compliance') {
+                complianceButton.style.backgroundColor = 'red';
+                var icon = document.createElement('i');
+                icon.className = 'fa fa-exclamation-triangle';
+                icon.style.color = 'yellow';
+                iconContainer.appendChild(icon);
+            }
+        }
+    });
+});

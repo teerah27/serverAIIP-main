@@ -69,7 +69,6 @@
                         <th>Outlet</th>
                         <th>Processed at</th>
                         <th>Result</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,11 +81,12 @@
                             <td><%= record.outlet_name %></td>
                             <td><%= record.process_date.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) %></td>
                             <td>
-                                <button type="button" class="buttonJSON" onclick="showJsonPopup('SOV Check\n\nMaggi: <%= record.annotated_json["SOV Maggi"] %>,Nestle: <%= record.annotated_json["SOV Nestle"] %>,Competitor: <%= record.annotated_json["SOV Competitor"] %>');">View SOV</button>
-                                <button type="button" class="buttonJSON" onclick="showJsonPopup('Compliance Check\n\nMaggi: <%= record.annotated_json["Compliance Maggi"] %>,Nestle: <%= record.annotated_json["Compliance Nestle"] %>,Eye Level Maggi: <%= record.annotated_json["Eye Level Maggi"] %>,Eye Level Nestle: <%= record.annotated_json["Eye Level Nestle"] %>');">View Compliance</button>
+                                <div id="sovIconContainer_<%= index %>" style="display: inline-block; vertical-align: middle;"></div>
+                                <button type="button" class="buttonJSON sovButtonJSON" data-competitor="<%= record.annotated_json['SOV Competitor'] %>" onclick="showJsonPopup('SOV Check\n\nMaggi: <%= record.annotated_json["SOV Maggi"] %>,Nestle: <%= record.annotated_json["SOV Nestle"] %>,Competitor: <%= record.annotated_json["SOV Competitor"] %>');" id="sovButton_<%= index %>">View SOV</button>
+                                <div id="complianceIconContainer_<%= index %>" style="display: inline-block; vertical-align: middle;"></div>
+                                <button type="button" class="buttonJSON complianceButtonJSON" onclick="showJsonPopup('Compliance Check\n\nMaggi: <%= record.annotated_json["Compliance Maggi"] %>,Nestle: <%= record.annotated_json["Compliance Nestle"] %>,Eye Level Maggi: <%= record.annotated_json["Eye Level Maggi"] %>,Eye Level Nestle: <%= record.annotated_json["Eye Level Nestle"] %>');" id="complianceButton_<%= index %>">View Compliance</button>
                                 <button type="button" class="buttonJSON" onclick="showJsonPopup('Out of Stock Check\n\nMaggi Kari: <%= record.annotated_json["Out of Stock Maggi Kari"] %>,Maggi Tomyam: <%= record.annotated_json["Out of Stock Maggi Tomyam"] %>,Nestle Koko: <%= record.annotated_json["Out of Stock Nestle Koko"] %>,Nestle Milo: <%= record.annotated_json["Out of Stock Nestle Milo"] %>,Nestle Star: <%= record.annotated_json["Out of Stock Nestle Star"] %>');">View Out of Stock</button>
-                            </td>
-                            <td><i class="fa fa-check" style="color: green;" aria-hidden="true"></i></td>
+                            </td>                            
                         </tr>
                     <% }); %>
                 </tbody>
