@@ -362,11 +362,11 @@ select                                                  {text-align: justify;
                                                         display: flex;
                                                         justify-content: center;
                                                         align-items: center;
-                                                        margin: 4% auto;}
-                                                        .red-button {
-                                                            background-color: red;
-                                                            /* Add any other styles you want for the red button */
-                                                        }                                                        
+                                                        margin-left: 15%;
+                                                        margin-right: 8%;
+                                                        margin-top: 4%;
+                                                        margin-bottom: 4%;}
+.red-button                                             {background-color: red;}                                                        
 .manage-container                                       {display: flex;
                                                         flex-wrap: wrap;
                                                         z-index: 555;
@@ -621,3 +621,4 @@ select                                                  {text-align: justify;
                                                         font-weight: bold;
                                                         color: #283791; 
                                                         margin-top: 0%;}
+.fa-exclamation-circle                                 {color: rgb(161, 159, 159);}

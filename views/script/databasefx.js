@@ -81,8 +81,8 @@ function closeJsonPopup() {
 document.addEventListener('DOMContentLoaded', function () {
     var sovButtons = document.querySelectorAll('.sovButtonJSON');
     var complianceButtons = document.querySelectorAll('.complianceButtonJSON');
+    var oosButtons = document.querySelectorAll('.oosButtonJSON');
 
-    // Handle SOV buttons
     sovButtons.forEach(function (sovButton) {
         var index = sovButton.getAttribute('id').split('_')[1];
         var iconContainer = document.getElementById('sovIconContainer_' + index);
@@ -93,8 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (sovCompetitorValue >= 50) {
                 sovButton.style.backgroundColor = 'red';
                 var icon = document.createElement('i');
-                icon.className = 'fa fa-exclamation-triangle';
-                icon.style.color = 'yellow';
+                icon.className = 'fa fa-exclamation-circle';
                 iconContainer.appendChild(icon);
             }
         }
@@ -105,14 +104,35 @@ document.addEventListener('DOMContentLoaded', function () {
         var iconContainer = document.getElementById('complianceIconContainer_' + index);
     
         if (complianceButton && iconContainer) {
-            var complianceMaggi = data[index].annotated_json["Compliance Maggi"];
-            var complianceNestle = data[index].annotated_json["Compliance Nestle"];
+            var maggiComplianceValue = complianceButton.getAttribute('data-maggi');
+            var nestleComplianceValue = complianceButton.getAttribute('data-nestle');
+            var maggiEyeValue = complianceButton.getAttribute('eye-maggi');
+            var nestleEyeValue = complianceButton.getAttribute('eye-nestle');
     
-            if (complianceMaggi === 'Non-Compliance' || complianceNestle === 'Non-Compliance') {
+            if (maggiComplianceValue === 'Non-Compliance' || nestleComplianceValue === 'Non-Compliance' || maggiEyeValue === 'No' || nestleEyeValue === 'No') {
                 complianceButton.style.backgroundColor = 'red';
                 var icon = document.createElement('i');
-                icon.className = 'fa fa-exclamation-triangle';
-                icon.style.color = 'yellow';
+                icon.className = 'fa fa-exclamation-circle';
+                iconContainer.appendChild(icon);
+            }
+        }
+    });
+
+    oosButtons.forEach(function (oosButton) {
+        var index = oosButton.getAttribute('id').split('_')[1];
+        var iconContainer = document.getElementById('oosIconContainer_' + index);
+    
+        if (oosButton && iconContainer) {
+            var kariValue = oosButton.getAttribute('data-kari');
+            var tomyumValue = oosButton.getAttribute('data-tomyum');
+            var kokoValue = oosButton.getAttribute('data-koko');
+            var miloValue = oosButton.getAttribute('data-milo');
+            var starValue = oosButton.getAttribute('data-star');
+    
+            if (kariValue === 'Yes' || tomyumValue === 'Yes' || kokoValue === 'Yes' || miloValue === 'Yes' || starValue === 'Yes') {
+                oosButton.style.backgroundColor = 'red';
+                var icon = document.createElement('i');
+                icon.className = 'fa fa-exclamation-circle';
                 iconContainer.appendChild(icon);
             }
         }
