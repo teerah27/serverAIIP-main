@@ -350,7 +350,7 @@ select                                                  {text-align: justify;
                                                         justify-content: center;
                                                         align-items: center;
                                                         height: 100vh;}
- button.buttonJSON                                      {background-color: #0056b3;
+ button.buttonJSON                                      {background-color: #FCCB06;
                                                         color: #fff;
                                                         width: 4.9cm; 
                                                         height: 1cm;
@@ -365,8 +365,7 @@ select                                                  {text-align: justify;
                                                         margin-left: 15%;
                                                         margin-right: 8%;
                                                         margin-top: 4%;
-                                                        margin-bottom: 4%;}
-.red-button                                             {background-color: red;}                                                        
+                                                        margin-bottom: 4%;}                                                     
 .manage-container                                       {display: flex;
                                                         flex-wrap: wrap;
                                                         z-index: 555;
@@ -622,3 +621,10 @@ select                                                  {text-align: justify;
                                                         color: #283791; 
                                                         margin-top: 0%;}
 .fa-exclamation-circle                                 {color: rgb(161, 159, 159);}
+.custom-popup {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
