@@ -110,8 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 iconContainer.addEventListener('mouseleave', function () {
                     hideStatus(popupElement);
                 });
-            }
-            else {
+            } else {
                 sovButton.style.backgroundColor = 'green';
                 var icon = document.createElement('i');
                 iconContainer.appendChild(icon);
@@ -129,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var maggiEyeValue = complianceButton.getAttribute('eye-maggi');
             var nestleEyeValue = complianceButton.getAttribute('eye-nestle');
 
-            if ((maggiComplianceValue === 'Non-Compliance' || nestleComplianceValue === 'Non-Compliance') && (maggiEyeValue === 'No' || nestleEyeValue === 'No')) {
+            if ((maggiComplianceValue === 'Non-Compliance' && nestleComplianceValue === 'Non-Compliance') && (maggiEyeValue === 'No' && nestleEyeValue === 'No')) {
                 complianceButton.style.backgroundColor = 'red';
                 var icon = document.createElement('i');
                 icon.className = 'fa fa-exclamation-circle';
@@ -165,12 +164,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (oosButton && iconContainer) {
             var kariValue = oosButton.getAttribute('data-kari');
-            var tomyumValue = oosButton.getAttribute('data-tomyum');
+            var tomyamValue = oosButton.getAttribute('data-tomyam');
             var kokoValue = oosButton.getAttribute('data-koko');
             var miloValue = oosButton.getAttribute('data-milo');
             var starValue = oosButton.getAttribute('data-star');
 
-            if ((kariValue === 'Yes' || tomyumValue === 'Yes') && (kokoValue === 'Yes' || miloValue === 'Yes' || starValue === 'Yes')) {
+            if (kariValue === 'Yes' && tomyamValue === 'Yes' && kokoValue === 'Yes' && miloValue === 'Yes' && starValue === 'Yes') {
                 oosButton.style.backgroundColor = 'red';
                 var icon = document.createElement('i');
                 icon.className = 'fa fa-exclamation-circle';
@@ -190,10 +189,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 iconContainer.addEventListener('mouseleave', function () {
                     hideStatus(popupElement);
                 });
-            } else if ((kariValue === 'No' && tomyumValue === 'No') && (kokoValue === 'No' && miloValue === 'No' && starValue === 'No')) {
+            } else if (kariValue === 'No' && tomyamValue === 'No' && kokoValue === 'No' && miloValue === 'No' && starValue === 'No') {
                 oosButton.style.backgroundColor = 'green';
-            }
-            else {
+            } else {
                 var icon = document.createElement('i');
                 icon.className = 'fa fa-exclamation-circle';
                 iconContainer.appendChild(icon);

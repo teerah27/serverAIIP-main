@@ -192,7 +192,7 @@ button:hover                                            {background-color: #2837
                                                         border-radius: 20px;
                                                         transition: background 0.3s ease;}
 .popup a:hover                                          {background: #0056b3;}
-.sidenav a:hover                                         {background-color: #FCCB06;
+.sidenav a:hover                                        {background-color: #FCCB06;
                                                         color: #2667ff;}        
 .table                                                  {transition: margin 0.3s;
                                                         border-collapse: collapse;
@@ -234,12 +234,9 @@ td, th                                                  {border: 1px solid #2837
 .delete-outlet-btn                                      {cursor: pointer;
                                                         color: #dc3545;}
 .delete-outlet-btn:hover                                {color: #bd2130;}
-@media screen and (max-width: 768px)                    {
-                                                        .table, .table-outlet {
-                                                            width: 100%;
-                                                            margin-left: 0;
-                                                        }
-                                                        }
+@media screen and (max-width: 768px){
+.table, .table-outlet                                   {width: 100%;
+                                                        margin-left: 0;}}
 option                                                  {text-align: justify;
                                                         font-size: 100%;
                                                         font-family: tahoma;}
@@ -620,11 +617,10 @@ select                                                  {text-align: justify;
                                                         font-weight: bold;
                                                         color: #283791; 
                                                         margin-top: 0%;}
-.fa-exclamation-circle                                 {color: rgb(161, 159, 159);}
-.custom-popup {
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+.fa-exclamation-circle                                  {color: rgb(161, 159, 159);}
+.custom-popup                                           {position: absolute;
+                                                        background-color: #fff;
+                                                        border: 1px solid #ccc;
+                                                        padding: 10px;
+                                                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                                        margin-left: 16.5%;}
