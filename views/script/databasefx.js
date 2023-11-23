@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 var popupElement = document.createElement('div');
                 popupElement.className = 'custom-popup';
-                popupElement.innerHTML = 'This is a custom popup!';
+                popupElement.innerHTML = 'All products has lower SOV value than competitor!';
                 popupElement.style.display = 'none'; 
                 iconContainer.appendChild(popupElement);
 
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 var popupElement = document.createElement('div');
                 popupElement.className = 'custom-popup';
-                popupElement.innerHTML = 'This is a custom popup!';
+                popupElement.innerHTML = 'All product are non-compliance and not on eye level!';
                 popupElement.style.display = 'none'; 
                 iconContainer.appendChild(popupElement);
 
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 var popupElement = document.createElement('div');
                 popupElement.className = 'custom-popup';
-                popupElement.innerHTML = 'This is a custom popup!';
+                popupElement.innerHTML = 'All products are not in stock!';
                 popupElement.style.display = 'none'; 
                 iconContainer.appendChild(popupElement);
 
