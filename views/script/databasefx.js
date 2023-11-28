@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 var icon = document.createElement('i');
                 icon.className = 'fa fa-exclamation-circle';
                 iconContainer.appendChild(icon);
-                icon.style.color = 'red';
 
                 var popupElement = document.createElement('div');
                 popupElement.className = 'custom-popup';
@@ -103,11 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupElement.style.display = 'none'; 
                 iconContainer.appendChild(popupElement);
 
-                iconContainer.addEventListener('mouseenter', function () {
+                icon.addEventListener('mouseenter', function () {
                     showStatus(popupElement);
                 });
 
-                iconContainer.addEventListener('mouseleave', function () {
+                icon.addEventListener('mouseleave', function () {
                     hideStatus(popupElement);
                 });
             } else {
@@ -133,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 var icon = document.createElement('i');
                 icon.className = 'fa fa-exclamation-circle';
                 iconContainer.appendChild(icon);
-                icon.style.color = 'red';
 
                 var popupElement = document.createElement('div');
                 popupElement.className = 'custom-popup';
@@ -141,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupElement.style.display = 'none'; 
                 iconContainer.appendChild(popupElement);
 
-                iconContainer.addEventListener('mouseenter', function () {
+                icon.addEventListener('mouseenter', function () {
                     showStatus(popupElement);
                 });
 
-                iconContainer.addEventListener('mouseleave', function () {
+                icon.addEventListener('mouseleave', function () {
                     hideStatus(popupElement);
                 });
             } else if ((maggiComplianceValue === 'Compliance' && nestleComplianceValue === 'Compliance') && (maggiEyeValue === 'Yes' && nestleEyeValue === 'Yes')) {
@@ -174,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 var icon = document.createElement('i');
                 icon.className = 'fa fa-exclamation-circle';
                 iconContainer.appendChild(icon);
-                icon.style.color = 'red';
 
                 var popupElement = document.createElement('div');
                 popupElement.className = 'custom-popup';
@@ -182,11 +179,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupElement.style.display = 'none'; 
                 iconContainer.appendChild(popupElement);
 
-                iconContainer.addEventListener('mouseenter', function () {
+                icon.addEventListener('mouseenter', function () {
                     showStatus(popupElement);
                 });
 
-                iconContainer.addEventListener('mouseleave', function () {
+                icon.addEventListener('mouseleave', function () {
                     hideStatus(popupElement);
                 });
             } else if (kariValue === 'No' && tomyamValue === 'No' && kokoValue === 'No' && miloValue === 'No' && starValue === 'No') {
