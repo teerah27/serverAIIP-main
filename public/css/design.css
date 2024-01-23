@@ -201,7 +201,7 @@ button:hover                                            {background-color: #2837
 .table-product                                          {transition: margin 0.3s;
                                                         border-collapse: collapse;
                                                         width: 90%;
-                                                        margin: -7% 1% 1% auto;}
+                                                        margin: -2% 1% 1% auto;}
 .table-dashboard                                        {transition: margin 0.3s;
                                                         border-collapse: collapse;
                                                         width: 90%;
@@ -368,7 +368,7 @@ select                                                  {text-align: justify;
                                                         z-index: 555;
                                                         color: #000000;
                                                         justify-content: space-between;
-                                                        padding: 2% 4%;
+                                                        padding: 3% 6%;
                                                         transition: margin-left 0.3s;
                                                         align-items: center;
                                                         height: 100vh;}
@@ -383,10 +383,11 @@ select                                                  {text-align: justify;
                                                         position:flex;
                                                         background-color: #FCCB06;
                                                         margin-top: -2%;
-                                                        margin-bottom: 2%;
+                                                        margin-bottom: 1%;
                                                         border-radius: 10px;
                                                         padding-top: 2%;
                                                         margin-left: 7%;
+                                                        padding-bottom: 2%;
                                                         align-items: center;}
 .product-container                                      {width: 100%;
                                                         background-color: #FCCB06;
