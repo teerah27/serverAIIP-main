@@ -22,14 +22,18 @@ databaseRouter.get('/', (req, res) => {
           (${staffFilter && staffFilter !== 'All' ? 'v.first_name || \' \' || v.last_name ILIKE $1' : '1=1'})
           OR
           (${outletFilter && outletFilter !== 'All' ? 'o.outlet_name ILIKE $2' : '1=1'})
-
-        )      
+          OR
+          (${processedAtFilter ? 'TO_DATE(i.process_date::text, \'YYYY-MM-DD\') = $3' : '1=1'})
+        )
+       
         ORDER BY i.process_date DESC`;
     
         const params = [
             staffFilter && staffFilter !== 'All' ? `%${staffFilter}%` : null,
             outletFilter && outletFilter !== 'All' ? `%${outletFilter}%` : null,
+            processedAtFilter ? processedAtFilter : null
           ].filter(param => param !== null);
+          
                      
 
         pool.query(query, params, (err, result) => {

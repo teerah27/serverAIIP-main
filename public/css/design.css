@@ -73,7 +73,7 @@ button.css-outlet                                       {background-color: #2837
                                                         font-size: 120%;
                                                         cursor: pointer;
                                                         position: inherit;}
-button:hover                                            {background-color: #283791;}
+button:hover                                            {background-color: #2667ff;}
 .sidenav                                                {height: 100%;
                                                         width: 5.5%; 
                                                         position: fixed;
@@ -629,28 +629,28 @@ select                                                  {text-align: justify;
                                                             display: flex;
                                                             justify-content: flex-end;
                                                             align-items: center;
-                                                            margin-top: 20px;
-                                                            margin-right: 25px;
+                                                            margin-top: 5%;
+                                                            margin-right: 2%;
                                                         }
                                                     
                                                         label, select, input {
-                                                            margin-right: 10px; /* Adjust the margin as needed */
-                                                            padding: 8px; /* Adjust the padding as needed */
-                                                            border: 1px solid #ccc;
-                                                            border-radius: 4px;
+                                                            margin-right: 0.8%; /* Adjust the margin as needed */
+                                                            padding: 0.5%; /* Adjust the padding as needed */
+                                                            border: 1% solid #6c6c6c;
+                                                            border-radius: 1%;
                                                         }
                                                     
-                                                        button {
-                                                            padding: 10px 0px; /* Adjust the padding as needed */
-                                                            font-size: 16px; /* Adjust the font size as needed */
+                                                        .button-filter {
+                                                            padding: 0.75%; /* Adjust the padding as needed */
+                                                            font-size: 100%; /* Adjust the font size as needed */
                                                             background-color: #283791;
                                                             color: white;
-                                                            width: 120px;
+                                                            width: 8%;
                                                             border: none;
                                                             border-radius: 40px;
                                                             cursor: pointer;
                                                         }
                                                     
-                                                        button:hover {
+                                                        .button-filter:hover {
                                                             background-color: #2667ff;
                                                         }

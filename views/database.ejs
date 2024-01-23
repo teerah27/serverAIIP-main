@@ -56,38 +56,35 @@
 
     <div class="table-container2" id="table-container2">
         <!-- Add the following code inside the <div class="container3"> element, before the table -->
-        <% if (data.length > 0) { %>
-            <div class="filter-container">
-                <label for="staffFilter"><i class="fa fa-filter" aria-hidden="true"></i> Filter:</label>
-                <select id="staffFilter">
-                    <option value="All">All staff</option>
-                    <!-- Populate staff options dynamically based on your data -->
-                    <!-- For simplicity, assuming each staff member has a unique identifier -->
-                    <% const staffSet = new Set(); %>
-                    <% data.forEach(record => staffSet.add(record.first_name + ' ' + record.last_name)); %>
-                    <% Array.from(staffSet).forEach(staff => { %>
-                        <option value="<%= staff %>"><%= staff %></option>
-                    <% }); %>
-                </select>
+    <div class="filter-container">
+        <label for="staffFilter"><i class="fa fa-filter" aria-hidden="true"></i> Filter:</label>
+        <select id="staffFilter">
+            <option value="All">All staff</option>
+            <!-- Populate staff options dynamically based on your data -->
+            <!-- For simplicity, assuming each staff member has a unique identifier -->
+            <% const staffSet = new Set(); %>
+            <% data.forEach(record => staffSet.add(record.first_name + ' ' + record.last_name)); %>
+            <% Array.from(staffSet).forEach(staff => { %>
+                <option value="<%= staff %>"><%= staff %></option>
+            <% }); %>
+        </select>
 
-                <select id="outletFilter">
-                    <option value="All">All outlet</option>
-                    <!-- Populate outlet options dynamically based on your data -->
-                    <% const outletSet = new Set(); %>
-                    <% data.forEach(record => outletSet.add(record.outlet_name)); %>
-                    <% Array.from(outletSet).forEach(outlet => { %>
-                        <option value="<%= outlet %>"><%= outlet %></option>
-                    <% }); %>
-                </select>
-
-                <button onclick="filterData()">Apply</button>
-            </div>
-        <% } %>
-
+        <select id="outletFilter">
+            <option value="All">All outlet</option>
+            <!-- Populate outlet options dynamically based on your data -->
+            <% const outletSet = new Set(); %>
+            <% data.forEach(record => outletSet.add(record.outlet_name)); %>
+            <% Array.from(outletSet).forEach(outlet => { %>
+                <option value="<%= outlet %>"><%= outlet %></option>
+            <% }); %>
+        </select>
+        <button type="button" class="button-filter" onclick="filterData()">Apply</button>
+    </div>
+        
         <% if (data.length === 0) { %>
             <div class="gif-img2">
-                <p>No data of processed image.</p>
-            </div>
+            <p>No data of processed image.</p>
+        </div>
         <% } else { %>
             <table id="region" class="table" style="width:90%">
                 <thead>
@@ -121,9 +118,10 @@
                         </tr>
                     <% }); %>
                 </tbody>
+                <% } %>
             </table>
-        <% } %>
-
+            
+    
     </div>
     <div id="logoutConfirmation" class="logoutpopup">
         <p>Are you sure you want to logout?</p>

@@ -39,28 +39,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function filterData() {
-    const staffFilter = document.getElementById("staffFilter").value;
-    const outletFilter = document.getElementById("outletFilter").value;
-    const processedAtFilter = document.getElementById("processedAtFilter").value;
-
+    const staffFilter = document.getElementById("staffFilter").value.toLowerCase();
+    const outletFilter = document.getElementById("outletFilter").value.toLowerCase();
     const tableRows = document.querySelectorAll('tbody tr');
 
     tableRows.forEach(row => {
-        const staffColumn = row.querySelector('td:nth-child(4)'); // Adjust index based on your table structure
-        const outletColumn = row.querySelector('td:nth-child(5)'); // Adjust index based on your table structure
-        const processedAtColumn = row.querySelector('td:nth-child(6)'); // Adjust index based on your table structure
+        const staffColumn = row.querySelector('td:nth-child(4)').textContent.toLowerCase(); // Adjust index based on your table structure
+        const outletColumn = row.querySelector('td:nth-child(5)').textContent.toLowerCase(); // Adjust index based on your table structure
 
-        const staffMatch = staffFilter === "All" || staffColumn.textContent.includes(staffFilter);
-        const outletMatch = outletFilter === "All" || outletColumn.textContent.includes(outletFilter);
-        const processedAtMatch = processedAtFilter === "" || processedAtColumn.textContent.includes(processedAtFilter);
+        const staffMatch = staffFilter === "all" || staffColumn.includes(staffFilter);
+        const outletMatch = outletFilter === "all" || outletColumn.includes(outletFilter);
 
-        if (staffMatch && outletMatch && processedAtMatch) {
+        if (staffMatch && outletMatch) {
             row.style.display = "";
         } else {
             row.style.display = "none";
         }
     });
 }
+
 
 
 function showImage(imagePath) {
