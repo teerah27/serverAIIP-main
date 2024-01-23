@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidenav = document.getElementById("sidenav");
     const table = document.getElementById("table-container2");
     let originalMarginLeft;
+    
 
     sidenav.addEventListener("mouseenter", function () {
         originalMarginLeft = getComputedStyle(table).marginLeft;
@@ -36,6 +37,31 @@ document.addEventListener("DOMContentLoaded", function () {
         noColumn.textContent = index + 1;
     });
 });
+
+function filterData() {
+    const staffFilter = document.getElementById("staffFilter").value;
+    const outletFilter = document.getElementById("outletFilter").value;
+    const processedAtFilter = document.getElementById("processedAtFilter").value;
+
+    const tableRows = document.querySelectorAll('tbody tr');
+
+    tableRows.forEach(row => {
+        const staffColumn = row.querySelector('td:nth-child(4)'); // Adjust index based on your table structure
+        const outletColumn = row.querySelector('td:nth-child(5)'); // Adjust index based on your table structure
+        const processedAtColumn = row.querySelector('td:nth-child(6)'); // Adjust index based on your table structure
+
+        const staffMatch = staffFilter === "All" || staffColumn.textContent.includes(staffFilter);
+        const outletMatch = outletFilter === "All" || outletColumn.textContent.includes(outletFilter);
+        const processedAtMatch = processedAtFilter === "" || processedAtColumn.textContent.includes(processedAtFilter);
+
+        if (staffMatch && outletMatch && processedAtMatch) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
 
 function showImage(imagePath) {
     var modal = document.getElementById("imageModal");
@@ -204,3 +230,5 @@ document.addEventListener('DOMContentLoaded', function () {
         popupElement.style.display = 'none';
     }
 });
+
+

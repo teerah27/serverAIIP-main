@@ -201,7 +201,7 @@ button:hover                                            {background-color: #2837
 .table-product                                          {transition: margin 0.3s;
                                                         border-collapse: collapse;
                                                         width: 90%;
-                                                        margin: -2% 1% 1% auto;}
+                                                        margin: -4% 1% 1% auto;}
 .table-dashboard                                        {transition: margin 0.3s;
                                                         border-collapse: collapse;
                                                         width: 90%;
@@ -382,8 +382,8 @@ select                                                  {text-align: justify;
 .outlet-container                                       {width: 100%;
                                                         position:flex;
                                                         background-color: #FCCB06;
-                                                        margin-top: -2%;
-                                                        margin-bottom: 1%;
+                                                        margin-top: -7%;
+                                                        margin-bottom: -4%;
                                                         border-radius: 10px;
                                                         padding-top: 2%;
                                                         margin-left: 7%;
@@ -625,3 +625,32 @@ select                                                  {text-align: justify;
                                                         padding: 10px;
                                                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                                                         margin-left: 16.5%;}
+                                                        .filter-container {
+                                                            display: flex;
+                                                            justify-content: flex-end;
+                                                            align-items: center;
+                                                            margin-top: 20px;
+                                                            margin-right: 25px;
+                                                        }
+                                                    
+                                                        label, select, input {
+                                                            margin-right: 10px; /* Adjust the margin as needed */
+                                                            padding: 8px; /* Adjust the padding as needed */
+                                                            border: 1px solid #ccc;
+                                                            border-radius: 4px;
+                                                        }
+                                                    
+                                                        button {
+                                                            padding: 10px 0px; /* Adjust the padding as needed */
+                                                            font-size: 16px; /* Adjust the font size as needed */
+                                                            background-color: #283791;
+                                                            color: white;
+                                                            width: 120px;
+                                                            border: none;
+                                                            border-radius: 40px;
+                                                            cursor: pointer;
+                                                        }
+                                                    
+                                                        button:hover {
+                                                            background-color: #2667ff;
+                                                        }
