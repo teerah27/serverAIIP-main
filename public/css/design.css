@@ -312,7 +312,6 @@ select                                                  {text-align: justify;
 .modal                                                  {display: none;
                                                         position: fixed;
                                                         z-index: 9999;
-                                                        padding-top: 50px;
                                                         left: 0;
                                                         top: 0;
                                                         width: 100%;
@@ -320,11 +319,13 @@ select                                                  {text-align: justify;
                                                         overflow: auto;
                                                         background-color: rgba(0, 0, 0, 0.9);}
 .modal-content                                          {background-color: #fefefe;
-                                                        padding: 20px;
-                                                        border-radius: 5px;
-                                                        max-width: 600px;
-                                                        margin-top: 12%;
-                                                        margin-left: 35%;}
+                                                        padding: 3%;
+                                                        border-radius: 1%;
+                                                        max-width: 100%;
+                                                        margin-top: 6%;
+                                                        margin-bottom: 6%;
+                                                        margin-left: 25%;
+                                                        margin-right: 25%;}
 .close-modal                                            {position: absolute;
                                                         top: 10px;
                                                         right: 25px;
@@ -336,7 +337,7 @@ select                                                  {text-align: justify;
                                                         max-width: 90%;
                                                         max-height: 90%;}
 #jsonContent                                            {white-space: pre-wrap;
-                                                        max-height: 300px;
+                                                        max-height: 500px;
                                                         overflow-y: auto;
                                                         font-family: 'Courier New', Courier, monospace;
                                                         font-size: 20px;
@@ -654,3 +655,19 @@ select                                                  {text-align: justify;
                                                         .button-filter:hover {
                                                             background-color: #2667ff;
                                                         }
+                                                        .json-table {
+                                                            width: 100%;
+                                                            border-collapse: collapse;
+                                                            border: 1px solid #ddd;
+                                                          }
+                                                          
+                                                          .json-table th, .json-table td {
+                                                            padding: 8px;
+                                                            border: 1px solid #ddd;
+                                                          }
+                                                          
+                                                          .json-table th {
+                                                            background-color: #283791;
+                                                            text-align: left;
+                                                          }
+                                                          

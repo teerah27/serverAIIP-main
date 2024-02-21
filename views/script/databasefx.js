@@ -86,19 +86,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function showJsonPopup(jsonContent) {
-    var popup = document.getElementById('jsonPopup');
+function showJsonPopup(title, jsonContent) {
+    var modal = document.getElementById('jsonPopup');
     var jsonContentElement = document.getElementById('jsonContent');
 
     const cleanedJsonData = jsonContent.replace(/[{}"]/g, '');
-    const formattedJsonData = cleanedJsonData.replace(/,/g, '\n');
+    const keyValuePairs = cleanedJsonData.split(',');
+    const tableRows = keyValuePairs.map(pair => {
+        const [key, value] = pair.split(':');
+        return `<tr><td>${key}</td><td>${value}</td></tr>`;
+    }).join('');
 
-    jsonContentElement.textContent = formattedJsonData;
-    document.getElementById("jsonPopup").style.display = "block";
+    const tableHTML = `
+        <div style="width: 100%; margin: 0 auto;">
+            <h3 style="text-align: center;">${title}</h3>
+            <table class="json-table" style="margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+        </div>
+    `;
+
+    jsonContentElement.innerHTML = tableHTML;
+    modal.style.display = "block";
 }
 
+
 function closeJsonPopup() {
-    document.getElementById("jsonPopup").style.display = "none";
+    var modal = document.getElementById('jsonPopup');
+    modal.style.display = "none";
 }
 
 document.addEventListener('DOMContentLoaded', function () {
